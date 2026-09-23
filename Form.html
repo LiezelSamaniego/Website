@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Elements</title>
+</head>
+
+<body>
+
+<h1>html form elements</h1>
+
+<!--
+REMINDER: The <form> element wraps all interactive form controls.
+- action: Specifies where to send the form-data when submitted.
+- method: HTTP method to use (GET or POST).
+- enctype: Specifies how form-data should be encoded.
+- autocomplete: Enables or disables browser auto-fill.
+- novalidate: Disables default HTML5 form validation.
+-->
+
+<form action="#" method="post" autocomplete="on">
+
+<!-- ========================================== -->
+<!-- CATEGORY 1: TEXT INPUTS -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>Text Inputs</legend>
+
+<!-- Standard Text Input -->
+<p>
+<label for="basic-text">Text Input:</label>
+<input type="text"
+       id="basic-text"
+       name="basic_text"
+       placeholder="Enter plain text"
+       maxlength="50">
+</p>
+
+<!-- Password Input -->
+<p>
+<label for="user-password">Password Input:</label>
+<input type="password"
+       id="user-password"
+       name="user_password"
+       placeholder="Enter password"
+       required>
+</p>
+
+<!-- Email Input -->
+<p>
+<label for="user-email">Email Input:</label>
+<input type="email"
+       id="user-email"
+       name="user_email"
+       placeholder="user@example.com"
+       multiple>
+</p>
+
+<!-- URL Input -->
+<p>
+<label for="user-url">URL Input:</label>
+<input type="url"
+       id="user-url"
+       name="user_url"
+       placeholder="https://example.com">
+</p>
+
+<!-- Telephone Input -->
+<p>
+<label for="user-tel">Telephone Input:</label>
+<input type="tel"
+       id="user-tel"
+       name="user_tel"
+       placeholder="123-456-7890"
+       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+</p>
+
+<!-- Search Input -->
+<p>
+<label for="site-search">Search Input:</label>
+<input type="search"
+       id="site-search"
+       name="site_search"
+       placeholder="Search site...">
+</p>
+
+<!-- Multi-line Text Area -->
+<p>
+<label for="user-bio">Textarea (Multi-line Text):</label><br>
+<textarea id="user-bio"
+          name="user_bio"
+          rows="4"
+          cols="50"
+          placeholder="Type your biography here..."></textarea>
+</p>
+
+</fieldset>
+
+<br>
+
+<!-- ========================================== -->
+<!-- CATEGORY 2: NUMERICAL & RANGE -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>Numerical &amp; Range</legend>
+
+<!-- Number Input -->
+<p>
+<label for="user-age">Number Input:</label>
+<input type="number"
+       id="user-age"
+       name="user_age"
+       min="1"
+       max="120"
+       step="1"
+       value="25">
+</p>
+
+<!-- Range Control -->
+<p>
+<label for="volume-level">Range Input (Slider):</label>
+<input type="range"
+       id="volume-level"
+       name="volume_level"
+       min="0"
+       max="100"
+       step="5"
+       value="50">
+</p>
+
+</fieldset>
+
+<br>
+
+<!-- ========================================== -->
+<!-- CATEGORY 3: DATE & TIME -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>Date &amp; Time Controls</legend>
+
+<!-- Date Input -->
+<p>
+<label for="event-date">Date Input:</label>
+<input type="date"
+       id="event-date"
+       name="event_date"
+       min="2020-01-01"
+       max="2030-12-31">
+</p>
+
+<!-- Time Input -->
+<p>
+<label for="event-time">Time Input:</label>
+<input type="time"
+       id="event-time"
+       name="event_time">
+</p>
+
+<!-- Date and Time Local -->
+<p>
+<label for="event-datetime">Date &amp; Time Local Input:</label>
+<input type="datetime-local"
+       id="event-datetime"
+       name="event_datetime">
+</p>
+
+<!-- Month Input -->
+<p>
+<label for="card-expiry-month">Month Input:</label>
+<input type="month"
+       id="card-expiry-month"
+       name="card_expiry_month">
+</p>
+
+<!-- Week Input -->
+<p>
+<label for="project-week">Week Input:</label>
+<input type="week"
+       id="project-week"
+       name="project_week">
+</p>
+
+</fieldset>
+
+<br>
+
+<!-- ========================================== -->
+<!-- CATEGORY 4: SELECTION CONTROLS -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>Selection Controls</legend>
+
+<!-- Single Checkbox -->
+<p>
+<input type="checkbox"
+       id="terms-agree"
+       name="terms_agree"
+       value="accepted">
+
+<label for="terms-agree">
+I agree to the terms and conditions (Single Checkbox)
+</label>
+</p>
+
+<!-- Multiple Checkboxes -->
+<p>
+<span>Hobbies (Multiple Checkboxes):</span><br>
+
+<input type="checkbox"
+       id="hobby-reading"
+       name="hobbies"
+       value="reading">
+<label for="hobby-reading">Reading</label>
+
+<input type="checkbox"
+       id="hobby-sports"
+       name="hobbies"
+       value="sports">
+<label for="hobby-sports">Sports</label>
+
+<input type="checkbox"
+       id="hobby-coding"
+       name="hobbies"
+       value="coding"
+       checked>
+<label for="hobby-coding">Coding</label>
+</p>
+
+<!-- Radio Buttons -->
+<p>
+<span>Contact Preference (Radio Buttons):</span><br>
+
+<input type="radio"
+       id="pref-email"
+       name="contact_pref"
+       value="email"
+       checked>
+<label for="pref-email">Email</label>
+
+<input type="radio"
+       id="pref-phone"
+       name="contact_pref"
+       value="phone">
+<label for="pref-phone">Phone</label>
+
+<input type="radio"
+       id="pref-mail"
+       name="contact_pref"
+       value="mail">
+<label for="pref-mail">Mail</label>
+</p>
+
+<!-- Select Dropdown -->
+<p>
+<label for="country-select">Select Dropdown:</label>
+
+<select id="country-select" name="country_select">
+
+<option value="" disabled selected>
+-- Select a Country --
+</option>
+
+<optgroup label="North America">
+<option value="us">United States</option>
+<option value="ca">Canada</option>
+</optgroup>
+
+<optgroup label="Europe">
+<option value="uk">United Kingdom</option>
+<option value="fr">France</option>
+</optgroup>
+
+</select>
+</p>
+
+<!-- Multi-Select List -->
+<p>
+<label for="skills-select">Multiple Select Box:</label><br>
+
+<select id="skills-select"
+        name="skills_select"
+        multiple
+        size="4">
+
+<option value="html">HTML5</option>
+<option value="css">CSS3</option>
+<option value="js">JavaScript</option>
+<option value="sql">SQL</option>
+
+</select>
+</p>
+
+<!-- Datalist -->
+<p>
+<label for="browser-choice">
+Datalist Input (Autocompletion):
+</label>
+
+<input list="browsers"
+       id="browser-choice"
+       name="browser_choice"
+       placeholder="Type or choose a browser">
+
+<datalist id="browsers">
+<option value="Google Chrome">
+<option value="Mozilla Firefox">
+<option value="Apple Safari">
+<option value="Microsoft Edge">
+<option value="Brave">
+</datalist>
+
+</p>
+
+</fieldset>
+
+<br>
+
+<!-- ========================================== -->
+<!-- CATEGORY 5: FILE & MEDIA -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>File &amp; Media Inputs</legend>
+
+<!-- File Upload -->
+<p>
+<label for="user-avatar">
+File Input (Single/Multiple):
+</label>
+
+<input type="file"
+       id="user-avatar"
+       name="user_avatar"
+       accept="image/*,.pdf"
+       multiple>
+</p>
+
+<!-- Color Picker -->
+<p>
+<label for="fav-color">
+Color Picker Input:
+</label>
+
+<input type="color"
+       id="fav-color"
+       name="fav_color"
+       value="#ff0000">
+</p>
+
+</fieldset>
+
+<br>
+
+<!-- ========================================== -->
+<!-- CATEGORY 6: SPECIAL, DISPLAY & HIDDEN -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>Special, Display &amp; Hidden Elements</legend>
+
+<!-- Hidden Input -->
+<input type="hidden"
+       id="user-id"
+       name="user_id"
+       value="102938">
+
+<!-- Output Element -->
+<p>
+
+<label for="num-a">A:</label>
+
+<input type="number"
+       id="num-a"
+       value="10">
+
++
+
+<label for="num-b">B:</label>
+
+<input type="number"
+       id="num-b"
+       value="20">
+
+=
+
+<output name="result"
+        for="num-a num-b">
+30
+</output>
+
+</p>
+
+<!-- Meter Element -->
+<p>
+<label for="disk-usage">
+Meter Element (Disk Usage):
+</label>
+
+<meter id="disk-usage"
+       min="0"
+       max="100"
+       low="33"
+       high="66"
+       optimum="80"
+       value="75">
+75%
+</meter>
+</p>
+
+<!-- Progress Element -->
+<p>
+<label for="file-progress">
+Progress Element:
+</label>
+
+<progress id="file-progress"
+          max="100"
+          value="60">
+60%
+</progress>
+</p>
+
+</fieldset>
+
+<br>
+
+<!-- ========================================== -->
+<!-- CATEGORY 7: BUTTON CONTROLS -->
+<!-- ========================================== -->
+
+<fieldset>
+<legend>Buttons &amp; Actions</legend>
+
+<!-- Submit Input -->
+<p>
+<input type="submit"
+       value="Submit Input Button">
+</p>
+
+<!-- Reset Input -->
+<p>
+<input type="reset"
+       value="Reset Input Button">
+</p>
+
+<!-- Generic Input Button -->
+<p>
+<input type="button"
+       value="Plain Input Button"
+       onclick="alert('Button clicked!')">
+</p>
+
+<!-- Image Button -->
+<p>
+<label for="img-submit">
+Image Submit Button:
+</label><br>
+
+<input type="image"
+       id="img-submit"
+       src="https://placehold.co/100x35/000000/FFFFFF?text=Submit"
+       alt="Submit Image Button">
+</p>
+
+<!-- HTML5 Button Tags -->
+<p>
+
+<button type="submit">
+<strong>Submit</strong> Button Tag
+</button>
+
+<button type="reset">
+<em>Reset</em> Button Tag
+</button>
+
+<button type="button">
+Custom <span>Button Tag</span>
+</button>
+
+</p>
+
+</fieldset>
+
+</form>
+
+</body>
+</html>
