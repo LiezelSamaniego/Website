@@ -1,144 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Class Schedule</title>
-
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 15px;
-        }
-
-        th {
-            background-color: #eee;
-        }
-
-        .computer {
-            background-color: #ffff00;
-            font-weight: bold;
-        }
-
-        .teacher {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
+    <title>Cooper Schedule</title>
 </head>
 
 <body>
 
-<table>
+<h1 style="text-align: center;">Grade 12 Cooper Class Schedule</h1>
 
+<table border="1" cellpadding="5" cellspacing="0" width="80%" align="center">
+
+    <!-- HEADER -->
     <tr>
-        <th>TIME</th>
-        <th>SUBJECT</th>
-        <th>CELL 3</th>
+        <th>Day</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
     </tr>
 
-    <!-- ROW 1 -->
+    <!-- ARRIVAL -->
     <tr>
-        <td>12:30 - 1:30 PM</td>
-
-        <td>
-            Pagulat sa Filipino sa Piling Larang
-            <br>
-            <span class="teacher">ODONO</span>
-        </td>
-
-        <!-- CELL 3 ONLY = COMPUTER PROGRAMMING -->
-        <td rowspan="3" class="computer">
-            Computer Programming Java
-            <br>
-            <span class="teacher">DE VERA</span>
-        </td>
+        <th>12:30 PM</th>
+        <th colspan="5">Arrival</th>
     </tr>
 
-    <!-- ROW 2 -->
+    <!-- COMPUTER PROGRAMMING -->
     <tr>
-        <td>1:30 - 2:10 PM</td>
-
-        <td>
-            Pagulat sa Filipino sa Piling Larang
-            <br>
-            <span class="teacher">ODONO</span>
+        <th>12:30 - 1:20 PM</th>
+        <td colspan="5" rowspan="2" align="center">
+            Computer Programming<br>
+            <i>DE VERA</i>
         </td>
     </tr>
 
-    <!-- ROW 3 -->
     <tr>
-        <td>2:10 - 3:00 PM</td>
+        <th>1:20 - 2:10 PM</th>
+    </tr>
 
-        <td>
-            Entrepreneurship
-            <br>
-            <span class="teacher">PAEZ</span>
+    <!-- 2:10 - 3:00 -->
+    <tr>
+        <th>2:10 - 3:00 PM</th>
+
+        <td colspan="2" align="center">
+            Pagsulat sa Filipino sa Piling Larang<br>
+            <i>ODONO</i>
+        </td>
+
+        <td colspan="3" align="center">
+            Entrepreneurship<br>
+            <i>PAEZ</i>
         </td>
     </tr>
 
     <!-- BREAK -->
     <tr>
-        <td>3:00 - 3:15 PM</td>
-        <td colspan="2" style="background-color: yellow;">
-            BREAK
+        <th>3:00 - 3:15 PM</th>
+        <th colspan="5">Break</th>
+    </tr>
+
+    <!-- 3:15 - 4:05 -->
+    <tr>
+        <th>3:15 - 4:05 PM</th>
+
+        <td align="center">
+            Homeroom<br>
+            <i>MANTALA</i>
+        </td>
+
+        <td align="center">
+            English for Academic and Professional Purposes<br>
+            <i>MANTALA</i>
+        </td>
+
+        <td rowspan="2" align="center">
+            Pagsulat sa Filipino sa Piling Larang<br>
+            <i>ODONO</i>
+        </td>
+
+        <td rowspan="2" align="center">
+            Physical Education and Health 4<br>
+            <i>DEMEGILLO</i>
+        </td>
+
+        <td align="center">
+            Entrepreneurship<br>
+            <i>PAEZ</i>
         </td>
     </tr>
 
-    <!-- ROW 4 -->
+    <!-- 4:05 - 4:55 -->
     <tr>
-        <td>3:15 - 4:05 PM</td>
+        <th>4:05 - 4:55 PM</th>
 
-        <td>
-            Homeroom Guidance
-            <br>
-            <span class="teacher">MANZAL</span>
+        <td colspan="2" rowspan="2" align="center">
+            English for Academic and Professional Purposes<br>
+            <i>MANTALA</i>
         </td>
 
-        <td>
-            English for Academic and Professional Purposes
-            <br>
-            <span class="teacher">MANZAL</span>
+        <td align="center">
+            Pagsulat sa Filipino sa Piling Larang<br>
+            <i>ODONO</i>
         </td>
     </tr>
 
-    <!-- ROW 5 -->
+    <!-- 4:55 - 5:45 -->
     <tr>
-        <td>4:05 - 4:55 PM</td>
+        <th>4:55 - 5:45 PM</th>
 
-        <td>
-            Physical Education and Health 4
-            <br>
-            <span class="teacher">DEMECILLO</span>
+        <td align="center">
+            Entrepreneurship<br>
+            <i>PAEZ</i>
         </td>
 
-        <td>
-            Pagulat sa Filipino sa Piling Larang
-            <br>
-            <span class="teacher">ODONO</span>
-        </td>
+        <td colspan="2"></td>
     </tr>
 
-    <!-- ROW 6 -->
+    <!-- DEPARTURE -->
     <tr>
-        <td>4:55 - 5:45 PM</td>
-
-        <td>
-            Entrepreneurship
-            <br>
-            <span class="teacher">PAEZ</span>
-        </td>
-
-        <td>
-            Pagulat sa Filipino sa Piling Larang
-            <br>
-            <span class="teacher">ODONO</span>
-        </td>
+        <th>5:45 PM</th>
+        <th colspan="5">Departure</th>
     </tr>
 
 </table>
