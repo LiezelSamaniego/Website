@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .calculator {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+        }
+
+        h1 {
+            text-align: center;
+            color: #142c78;
+            margin-bottom: 35px;
+        }
+
+        label {
+            display: block;
+            color: #5270b5;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 18px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #5270b5;
+        }
+
+        .result {
+            margin-top: 30px;
+        }
+
+        .result p {
+            margin: 8px 0;
+            font-size: 20px;
+            color: #142c78;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .compute {
+            background: #FF7F50;
+        }
+
+        .compute:hover {
+            background: #d96924;
+        }
+
+        .reset {
+            background: #4169E1;
+        }
+
+        .reset:hover {
+            background: #244aa5;
+        }
+
+        .programmed {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+
+        <h1>Discount Calculator</h1>
+
+        <label for="price">PRICE BEFORE DISCOUNT</label>
+        <input type="number" id="price" placeholder="Enter price">
+
+        <label for="discount">DISCOUNT (%)</label>
+        <input type="number" id="discount" placeholder="Enter discount">
+
+        <div class="result">
+
+            <label>PRICE AFTER DISCOUNT</label>
+            <p id="afterDiscount">₱ 0.00</p>
+
+            <label>SAVED AMOUNT</label>
+            <p id="savedAmount">₱ 0.00</p>
+
+        </div>
+
+        <div class="buttons">
+            <button class="compute" onclick="computeDiscount()">
+                Compute
+            </button>
+
+            <button class="reset" onclick="resetCalculator()">
+                Reset
+            </button>
+        </div>
+
+        <div class="programmed">
+            PROGRAMMED BY: Liezel Samaniego, 12 COOPER
+        </div>
+
+    </div>
+
+    <script>
+
+        function computeDiscount() {
+
+            let price = parseFloat(document.getElementById("price").value);
+            let discount = parseFloat(document.getElementById("discount").value);
+
+            if (isNaN(price) || isNaN(discount)) {
+                alert("Please enter the price and discount.");
+                return;
+            }
+
+            let saved = price * (discount / 100);
+            let after = price - saved;
+
+            document.getElementById("afterDiscount").innerHTML =
+                "₱ " + after.toFixed(2);
+
+            document.getElementById("savedAmount").innerHTML =
+                "₱ " + saved.toFixed(2);
+        }
+
+
+        function resetCalculator() {
+
+            document.getElementById("price").value = "";
+            document.getElementById("discount").value = "";
+
+            document.getElementById("afterDiscount").innerHTML =
+                "₱ 0.00";
+
+            document.getElementById("savedAmount").innerHTML =
+                "₱ 0.00";
+        }
+
+    </script>
+
+</body>
+</html>
