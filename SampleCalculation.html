@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Calculator</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            text-align: center;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-top: 50px;
+        }
+
+        .calculator {
+            width: 540px;
+            margin: auto;
+            border: 5px double #333366;
+        }
+
+        .row {
+            display: flex;
+            border-bottom: 1px solid #777;
+            min-height: 70px;
+        }
+
+        .label {
+            width: 40%;
+            border-right: 1px solid #777;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            font-size: 22px;
+            text-align: left;
+        }
+
+        .input-area {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        input {
+            width: 90%;
+            height: 30px;
+            font-size: 18px;
+            padding-left: 8px;
+        }
+
+        .button-row {
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #777;
+        }
+
+        button {
+            width: 145px;
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #9999e6;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7777cc;
+        }
+
+        .reset-row {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: centet;
+        }
+
+        .home {
+            display: block;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sample Calculator</h1>
+
+    <div class="calculator">
+
+        <!-- First Number -->
+        <div class="row">
+            <div class="label">
+                First Number:
+            </div>
+
+            <div class="input-area">
+                <input type="number" id="firstNumber"
+                       placeholder="Enter first number">
+            </div>
+        </div>
+
+        <!-- Second Number -->
+        <div class="row">
+            <div class="label">
+                Second Number:
+            </div>
+
+            <div class="input-area">
+                <input type="number" id="secondNumber"
+                       placeholder="Enter second number">
+            </div>
+        </div>
+
+        <!-- Compute Button -->
+        <div class="button-row">
+            <button onclick="compute()">Compute</button>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="reset-row">
+            <button onclick="resetCalculator()">Reset</button>
+        </div>
+
+    </div>
+
+    <div id="result"></div>
+
+    <a href="index.html" class="home">Home</a>
+
+
+    <script>
+        function compute() {
+            let first = Number(document.getElementById("firstNumber").value);
+            let second = Number(document.getElementById("secondNumber").value);
+
+            if (document.getElementById("firstNumber").value === "" ||
+                document.getElementById("secondNumber").value === "") {
+
+                document.getElementById("result").innerHTML =
+                    "Please enter both numbers.";
+
+                return;
+            }
+
+            let sum = first + second;
+
+            document.getElementById("result").innerHTML =
+                "Result: " + sum;
+        }
+
+        function resetCalculator() {
+            document.getElementById("firstNumber").value = "";
+            document.getElementById("secondNumber").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
