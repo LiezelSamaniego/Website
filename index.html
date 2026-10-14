@@ -1,23 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web</title>
+    <title>My Personal Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #581845;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 20px 28px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #a00096;
+            color: white;
+        }
+
+        .nav-link:focus {
+            outline: 3px solid #ffc107;
+        }
+
+        .nav-link.active {
+            background-color: #a00096;
+            border-bottom: 5px solid #ff0066;
+        }
+
+        /* Main Content */
+        .content {
+            text-align: center;
+            padding: 32px 10px;
+        }
+
+        .content h1 {
+            font-family: "Times New Roman", serif;
+            font-size: 42px;
+            margin-bottom: 32px;
+        }
+
+        .content h2 {
+            font-family: "Times New Roman", serif;
+            font-size: 32px;
+        }
+
+        .content p {
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-link {
+                padding: 16px 10px;
+                font-size: 14px;
+            }
+
+            .content h1 {
+                font-size: 30px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>My Web</h1>
+    <!-- Navigation Menu -->
+    <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
 
-    <h2>Liezel Samaniego</h2>
+            <li>
+                <a href="#" class="nav-link active"
+                   onclick="showPage('home', this)">Home</a>
+            </li>
 
-    <h3>G12-COOPER</h3>
+            <li>
+                <a href="#" class="nav-link"
+                   onclick="showPage('about', this)">About</a>
+            </li>
 
-    <br>
+            <li>
+                <a href="#" class="nav-link"
+                   onclick="showPage('gallery', this)">Gallery</a>
+            </li>
 
-    <a href="Form.html">FORM ELEMENTS</a>
+            <li>
+                <a href="#" class="nav-link"
+                   onclick="showPage('portfolio', this)">Portfolio</a>
+            </li>
+
+            <li>
+                <a href="#" class="nav-link"
+                   onclick="showPage('contact', this)">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="content" id="home">
+        <h1>Liezel Samaniego</h1>
+        <h2>12-Cooper</h2>
+    </div>
+
+    <!-- About Page -->
+    <div class="content" id="about" style="display:none;">
+        <h1>About Me</h1>
+        <p>Hello! My name is Liezel Samaniego.</p>
+        <p>I am a Grade 12 student from 12-Cooper.</p>
+    </div>
+
+    <!-- Gallery Page -->
+    <div class="content" id="gallery" style="display:none;">
+        <h1>Gallery</h1>
+        <p>Hello, welcome to my gallery!</p>
+    </div>
+
+    <!-- Portfolio Page -->
+    <div class="content" id="portfolio" style="display:none;">
+         <a href="Form.html">FORM ELEMENTS</a>
     <br>
     <a href="Portal.html">PORTAL LOGIN</a>
     <br>
@@ -30,9 +162,39 @@
     <a href="SampleCalculation.html">SampleCalculator</a>
      <br>
     <a href="FrameworkDeveloper.html">.NET Developer Profile</a>
+    </div>
 
+    <!-- Contact Page -->
+    <div class="content" id="contact" style="display:none;">
+        <h1>Contact Me</h1>
+        <p>Hello, welcome to my contact!</p>
+    </div>
 
+    <script>
+        function showPage(pageId, clickedLink) {
+
+            // Itago ang lahat ng pages
+            const pages = document.querySelectorAll(".content");
+
+            pages.forEach(function(page) {
+                page.style.display = "none";
+            });
+
+            // Ipakita ang napiling page
+            document.getElementById(pageId).style.display = "block";
+
+            // Alisin ang active sa lahat ng menu
+            const links = document.querySelectorAll(".nav-link");
+
+            links.forEach(function(link) {
+                link.classList.remove("active");
+            });
+
+            // I-highlight ang napiling menu
+            clickedLink.classList.add("active");
+        }
+    </script>
 
 </body>
-
 </html>
+Gumawa
