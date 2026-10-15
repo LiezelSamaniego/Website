@@ -1,0 +1,72 @@
+/* Ito ang pangunahing disenyo ng navigation bar. */
+.navbar {
+    background-color: #1B365D; /* Naglalagay ng navy blue na background. */
+    width: 100%; /* Ginagawang buong lapad ng container ang navbar. */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Naglalagay ng banayad na anino sa ilalim. */
+}
+
+/* NAVIGATION LIST */
+/* Inaayos ang mga menu item sa loob ng navigation bar. */
+.nav-list {
+    display: flex; /* Inilalagay ang mga menu item nang magkakatabi. */
+    flex-direction: row; /* Inaayos ang mga item nang pahalang, mula kaliwa papuntang kanan. */
+    justify-content: flex-start; /* Inilalagay ang mga item sa simula o kaliwang bahagi. */
+    align-items: center; /* Inaayos ang mga item sa gitna nang patayo. */
+    list-style-type: none; /* Tinatanggal ang mga bullet point sa listahan. */
+    margin: 0; /* Tinatanggal ang default na panlabas na espasyo. */
+    padding: 0; /* Tinatanggal ang default na panloob na espasyo. */
+}
+
+/* NAVIGATION LINK */
+/* Itinatakda ang itsura ng mga link sa menu. */
+.nav-link {
+    display: block; /* Ginagawang clickable ang buong bahagi ng link, kasama ang padding. */
+    padding: 14px 20px; /* Naglalagay ng 14px na espasyo sa taas at baba at 20px sa magkabilang gilid. */
+    color: #FFFFFF; /* Ginagawang puti ang kulay ng text. */
+    text-decoration: none; /* Tinatanggal ang underline ng link. */
+    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
+    font-size: 15px; /* Itinatakda ang laki ng text sa 15 pixels. */
+    font-weight: 600; /* Ginagawang semi-bold ang text. */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Pinapakinis ang pagbabago ng background at text color sa loob ng 0.3 segundo. */
+}
+
+/* 1. UNVISITED LINK STATE */
+/* Ito ang itsura ng link na hindi pa nabisita. */
+.nav-link:link {
+    color: #FFFFFF; /* Ginagawang puti ang text ng hindi pa nabisitang link. */
+}
+
+/* 2. VISITED LINK STATE */
+/* Ito ang itsura ng link na nabisita na dati. */
+.nav-link:visited {
+    color: #E0E0E0; /* Ginagawang light gray ang text ng nabisitang link. */
+}
+
+/* 3. MOUSE HOVER STATE */
+/* Ito ang nangyayari kapag itinapat ang mouse pointer sa link. */
+.nav-link:hover {
+    background-color: #005A9C; /* Binabago ang background sa asul kapag naka-hover. */
+    color: #FFFFFF; /* Ginagawang puti ang text habang naka-hover. */
+}
+
+/* 4. KEYBOARD FOCUS STATE */
+/* Ipinapakita kung aling link ang naka-focus, halimbawa gamit ang Tab key. */
+.nav-link:focus {
+    outline: 3px solid #FFC107; /* Naglalagay ng dilaw na outline na 3px ang kapal. */
+    outline-offset: -3px; /* Inilalapit ang outline sa loob ng gilid ng link. */
+    background-color: #004080; /* Ginagawang dark blue ang background habang naka-focus. */
+}
+
+/* 5. ACTIVE CLICK-PRESS STATE */
+/* Ito ang itsura ng link habang pinipindot ito. */
+.nav-link:active {
+    background-color: #002B55; /* Ginagawang mas madilim ang background habang pinipindot. */
+    transform: translateY(1px); /* Inililipat ang link nang 1px pababa habang pinipindot. */
+}
+
+/* 6. CURRENT PAGE HIGHLIGHT */
+/* Ginagamit ang active class upang ipakita ang kasalukuyang page. */
+.nav-link.active {
+    background-color: #005A9C; /* Nilalagyan ng asul na background ang kasalukuyang page link. */
+    border-bottom: 4px solid #FFC107; /* Naglalagay ng 4px na dilaw na linya sa ibaba ng link. */
+}
