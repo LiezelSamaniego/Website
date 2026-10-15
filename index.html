@@ -3,180 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: #87CEEB;
-            width: 100%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-        }
-
-        .nav-list {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 20px 28px;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        /* Hover Effect */
-        .nav-link:hover {
-            background-color: #4682B4;
-            color: white;
-        }
-
-        /* Keyboard Focus */
-        .nav-link:focus {
-            outline: 3px solid #ffc107;
-        }
-
-        /* Active Menu */
-        .nav-link.active {
-            background-color: #4682B4;
-            border-bottom: 5px solid #1E5AA8;
-        }
-
-        /* Main Content */
-        .content {
-            text-align: center;
-            padding: 32px 10px;
-            color: black;
-        }
-
-        .content h1 {
-            font-family: "Times New Roman", serif;
-            font-size: 42px;
-            margin-bottom: 32px;
-            color: black;
-        }
-
-        .content h2 {
-            font-family: "Times New Roman", serif;
-            font-size: 32px;
-            color: black;
-        }
-
-        .content p {
-            font-size: 22px;
-            margin-top: 20px;
-            color: black;
-        }
-
-        /* Portfolio Links */
-        .portfolio-link {
-            display: inline-block;
-            margin: 8px;
-            color: #1E5AA8;
-            font-size: 18px;
-            text-decoration: none;
-        }
-
-        .portfolio-link:hover {
-            color: #4682B4;
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 600px) {
-            .nav-list {
-                flex-wrap: wrap;
-            }
-
-            .nav-link {
-                padding: 16px 10px;
-                font-size: 14px;
-            }
-
-            .content h1 {
-                font-size: 30px;
-            }
-
-            .content h2 {
-                font-size: 24px;
-            }
-
-            .content p {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Navigation Menu -->
-    <nav class="navbar" aria-label="Main Navigation">
-        <ul class="nav-list">
-            <li>
-                <a href="#home" class="nav-link active"
-                   onclick="showPage('home', this)">Home</a>
-            </li>
-
-            <li>
-                <a href="#about" class="nav-link"
-                   onclick="showPage('about', this)">About</a>
-            </li>
-
-            <li>
-                <a href="#gallery" class="nav-link"
-                   onclick="showPage('gallery', this)">Gallery</a>
-            </li>
-
-            <li>
-                <a href="#portfolio" class="nav-link"
-                   onclick="showPage('portfolio', this)">Portfolio</a>
-            </li>
-
-            <li>
-                <a href="#contact" class="nav-link"
-                   onclick="showPage('contact', this)">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Home Page -->
-    <div class="content" id="home">
-        <h1>Liezel Samaniego</h1>
-        <h2>12-Cooper</h2>
-    </div>
-
-    <!-- About Page -->
-    <div class="content" id="about" style="display: none;">
-        <h1>About Me</h1>
-        <p>Hello! My name is Liezel Samaniego.</p>
-        <p>I am a Grade 12 student from 12-Cooper.</p>
-    </div>
-
-    <!-- Gallery Page -->
-    <div class="content" id="gallery" style="display: none;">
-        <h1>Gallery</h1>
-        <p>Hello, welcome to my gallery!</p>
-    </div>
-
-    <!-- Portfolio Page -->
-    <div class="content" id="portfolio" style="display: none;">
+    <title>Document</title>
+    <link rel="stylesheet" href="menu.css">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+ <ul class="nav-list">
+ <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+ <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+ <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+ <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+ <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+ </ul>
+</nav>
+<h1>Portfolio</h1>
+<div class="content" id="portfolio" style="display: none;">
         <h1>My Portfolio</h1>
 
         <a href="Form.html" class="portfolio-link">
@@ -213,34 +52,5 @@
             .NET Developer Profile
         </a>
     </div>
-
-    <!-- Contact Page -->
-    <div class="content" id="contact" style="display: none;">
-        <h1>Contact Me</h1>
-        <p>Hello, welcome to my contact page!</p>
-    </div>
-
-    <script>
-        function showPage(pageId, clickedLink) {
-
-            const pages = document.querySelectorAll(".content");
-
-            pages.forEach(function(page) {
-                page.style.display = "none";
-            });
-
-            document.getElementById(pageId).style.display = "block";
-
-            const links = document.querySelectorAll(".nav-link");
-
-            links.forEach(function(link) {
-                link.classList.remove("active");
-            });
-
-            clickedLink.classList.add("active");
-        }
-    </script>
-
 </body>
 </html>
-```
