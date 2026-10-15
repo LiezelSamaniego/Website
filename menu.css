@@ -85,35 +85,100 @@
     margin-top: 40px; /* Naglalagay ng espasyo sa itaas ng portfolio. */
 }
 
-/* PORTFOLIO ACTIVITY LIST */
-/* Ginagawang patayo ang mga activity link. */
+/* ACTIVITY LINKS */
+/* Ginagawang patayo ang mga activity link, isa sa ilalim ng isa. */
 .portfolio ul {
-    display: flex; /* Gumagamit ng flexbox para ayusin ang mga link. */
-    flex-direction: column !important; /* Inilalagay ang bawat link sa ilalim ng nauna. */
-    align-items: center; /* Inilalagay sa gitna ang mga link. */
-    list-style-type: none; /* Tinatanggal ang mga bullet point. */
-    margin: 25px 0; /* Naglalagay ng espasyo sa taas at baba. */
-    padding: 0; /* Tinatanggal ang default na panloob na espasyo. */
-    gap: 15px; /* Naglalagay ng 15px na pagitan sa bawat link. */
+    display: flex !important; /* Gumagamit ng flexbox para ayusin ang mga link. */
+    flex-direction: column !important; /* Inilalagay ang mga link nang patayo. */
+    justify-content: flex-start !important; /* Nagsisimula sa itaas ang listahan. */
+    align-items: center !important; /* Inilalagay sa gitna ang mga link. */
+    list-style: none !important; /* Tinatanggal ang mga bullet point. */
+    gap: 15px !important; /* Naglalagay ng pagitan sa bawat link. */
+    margin: 25px auto !important; /* Naglalagay ng espasyo sa itaas at ibaba. */
+    padding: 0 !important; /* Tinatanggal ang default na panloob na espasyo. */
 }
 
-/* PORTFOLIO LIST ITEM */
+/* BAWAT ACTIVITY */
 /* Tinitiyak na nasa sariling linya ang bawat activity. */
-.portfolio li {
-    display: block; /* Ginagawang block ang bawat item. */
-    width: 100%; /* Ginagamit ang buong lapad ng magulang na container. */
-    margin: 0; /* Tinatanggal ang default na panlabas na espasyo. */
-    padding: 0; /* Tinatanggal ang default na panloob na espasyo. */
+.portfolio ul li {
+    display: block !important; /* Ginagawang block ang bawat item. */
+    float: none !important; /* Tinatanggal ang anumang float na nagpapahiga sa mga item. */
+    width: 100% !important; /* Ginagamit ang buong lapad ng listahan. */
+    margin: 0 !important; /* Tinatanggal ang default na panlabas na espasyo. */
+    padding: 0 !important; /* Tinatanggal ang default na panloob na espasyo. */
+    text-align: center !important; /* Inilalagay sa gitna ang link. */
 }
 
-/* PORTFOLIO LINKS */
-/* Itinatakda ang disenyo ng bawat activity link. */
-.portfolio li a {
-    display: block; /* Ginagawang sariling block ang bawat link. */
+/* DISENYO NG ACTIVITY LINK */
+/* Itinatakda ang itsura ng bawat activity link. */
+.portfolio ul li a {
+    display: block !important; /* Ginagawang sariling linya ang bawat link. */
     width: 220px; /* Itinatakda ang lapad ng link sa 220px. */
-    max-width: 80%; /* Tinitiyak na kasya ang link sa maliit na screen. */
+    max-width: 90%; /* Tinitiyak na kasya sa maliit na screen. */
     margin: 0 auto; /* Inilalagay sa gitna ang bawat link. */
     padding: 12px 15px; /* Naglalagay ng espasyo sa loob ng link. */
     background-color: #1B365D; /* Naglalagay ng navy blue na background. */
     color: #FFFFFF; /* Ginagawang puti ang text. */
     text-decoration: none; /* Tinatanggal ang underline. */
+    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
+    font-size: 15px; /* Itinatakda ang laki ng text. */
+    border-radius: 6px; /* Ginagawang bahagyang bilog ang mga sulok. */
+    text-align: center; /* Inilalagay sa gitna ang text. */
+    box-sizing: border-box; /* Isinasama ang padding sa kabuuang lapad. */
+    transition: background-color 0.3s ease; /* Pinapakinis ang pagbabago ng background. */
+}
+
+/* ACTIVITY LINK HOVER */
+/* Binabago ang kulay kapag itinapat ang mouse sa link. */
+.portfolio ul li a:hover {
+    background-color: #005A9C; /* Ginagawang mas maliwanag na asul ang background. */
+    color: #FFFFFF; /* Pinananatiling puti ang text. */
+}
+
+/* GALLERY */
+/* Inaayos ang mga larawan sa gallery. */
+.gallery-container {
+    display: flex; /* Inilalagay ang mga larawan gamit ang flexbox. */
+    flex-wrap: wrap; /* Inililipat sa susunod na linya ang mga larawang hindi kasya. */
+    justify-content: center; /* Inilalagay sa gitna ang mga larawan. */
+    gap: 20px; /* Naglalagay ng pagitan sa bawat larawan. */
+    padding: 20px; /* Naglalagay ng espasyo sa paligid ng gallery. */
+}
+
+/* GALLERY IMAGES */
+/* Itinatakda ang laki at itsura ng mga larawan. */
+.gallery-container img {
+    width: 250px; /* Itinatakda ang lapad ng larawan. */
+    max-width: 100%; /* Tinitiyak na kasya ang larawan sa maliit na screen. */
+    height: 200px; /* Itinatakda ang taas ng larawan. */
+    object-fit: cover; /* Pinupunan ang sukat nang hindi binabago ang proporsyon. */
+    border-radius: 8px; /* Ginagawang bilog nang bahagya ang mga sulok. */
+}
+
+/* CONTACT */
+/* Inaayos ang contact information. */
+.contact-container {
+    max-width: 500px; /* Nililimitahan ang lapad ng contact section. */
+    margin: 30px auto; /* Inilalagay sa gitna ang contact section. */
+    padding: 20px; /* Naglalagay ng espasyo sa loob. */
+    text-align: left; /* Inilalagay sa kaliwa ang text. */
+    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
+}
+
+/* RESPONSIVE DESIGN */
+/* Inaayos ang navigation kapag maliit ang screen. */
+@media screen and (max-width: 600px) {
+    .nav-list {
+        flex-wrap: wrap; /* Pinapayagang lumipat sa susunod na linya ang menu kapag kulang ang espasyo. */
+    }
+
+    .nav-link {
+        padding: 12px; /* Binabawasan ang espasyo sa menu link. */
+        font-size: 14px; /* Binabawasan ang laki ng text. */
+    }
+
+    .gallery-container img {
+        width: 100%; /* Ginagawang buong lapad ang larawan sa maliit na screen. */
+        height: auto; /* Awtomatikong inaayos ang taas ng larawan. */
+    }
+}
