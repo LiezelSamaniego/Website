@@ -80,7 +80,7 @@ body {
     margin: 15px auto;
     padding: 12px 20px;
 
-    background-color: transparent;
+   
     color: black;
     text-decoration: none;
     border: none;
@@ -90,10 +90,6 @@ body {
     transition: 0.3s;
 }
 
-.project-link:hover {
-    background-color: transparent;
-    color: purple;
-}
 /* Mobile Responsive */
 @media screen and (max-width: 600px) {
     .nav-link {
