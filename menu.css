@@ -70,166 +70,50 @@
     border-bottom: 4px solid #FFC107; /* Naglalagay ng 4px na dilaw na linya sa ibaba ng link. */
 }
 
-
-/* GENERAL CONTENT */
-/* Inaayos ang pangunahing nilalaman ng bawat page. */
+/* PANGUNAHING NILALAMAN */
+/* Inaayos ang nilalaman ng bawat page. */
 .content {
-    max-width: 900px; /* Nililimitahan ang lapad ng content. */
-    margin: 40px auto; /* Inilalagay sa gitna at nagdaragdag ng espasyo sa itaas at ibaba. */
-    padding: 25px; /* Naglalagay ng panloob na espasyo. */
+    padding: 20px; /* Naglalagay ng espasyo sa paligid ng nilalaman. */
+    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
     text-align: center; /* Inilalagay sa gitna ang text. */
-    box-sizing: border-box; /* Isinasama ang padding sa kabuuang lapad. */
 }
 
-/* MAIN HEADING */
-/* Inaayos ang pangunahing heading ng bawat page. */
-.content h1 {
-    font-size: 32px; /* Itinatakda ang laki ng heading. */
-    margin-bottom: 20px; /* Naglalagay ng espasyo sa ilalim ng heading. */
-}
-
-/* PARAGRAPH */
-/* Inaayos ang mga talata sa loob ng content. */
-.content p {
-    font-size: 17px; /* Itinatakda ang laki ng text. */
-    line-height: 1.8; /* Nagbibigay ng pagitan sa bawat linya ng text. */
-}
-
-
-/* PORTFOLIO SECTION */
-/* Inaayos ang pangunahing content ng Portfolio page. */
+/* PORTFOLIO */
+/* Inaayos ang pangunahing bahagi ng portfolio. */
 .portfolio {
-    max-width: 900px; /* Nililimitahan ang lapad ng Portfolio. */
-    margin: 40px auto; /* Inilalagay sa gitna ang Portfolio. */
-    padding: 25px; /* Naglalagay ng panloob na espasyo. */
-    text-align: center; /* Inilalagay sa gitna ang heading at description. */
-    box-sizing: border-box; /* Isinasama ang padding sa kabuuang lapad. */
+    text-align: center; /* Inilalagay sa gitna ang nilalaman ng portfolio. */
+    margin-top: 40px; /* Naglalagay ng espasyo sa itaas ng portfolio. */
 }
 
-/* PORTFOLIO HEADING */
-/* Inaayos ang heading ng Portfolio page. */
-.portfolio h1 {
-    font-size: 32px; /* Itinatakda ang laki ng heading. */
-    margin-bottom: 15px; /* Naglalagay ng espasyo sa ilalim ng heading. */
-}
-
-/* PORTFOLIO DESCRIPTION */
-/* Inaayos ang description sa ilalim ng heading. */
-.portfolio p {
-    font-size: 17px; /* Itinatakda ang laki ng text. */
-    line-height: 1.8; /* Nagbibigay ng sapat na pagitan sa mga linya. */
-}
-
-/* PORTFOLIO LIST */
-/* Inaayos ang listahan ng mga activity links. */
+/* PORTFOLIO ACTIVITY LIST */
+/* Ginagawang patayo ang mga activity link. */
 .portfolio ul {
-    display: flex; /* Ginagamit ang Flexbox para ayusin ang mga link. */
-    flex-direction: column; /* Inilalagay ang mga link nang patayo. */
-    align-items: center; /* Inilalagay sa gitna ang bawat link. */
-    list-style-type: none; /* Tinatanggal ang bullet points. */
-    margin: 25px 0; /* Naglalagay ng espasyo sa itaas at ibaba. */
+    display: flex; /* Gumagamit ng flexbox para ayusin ang mga link. */
+    flex-direction: column !important; /* Inilalagay ang bawat link sa ilalim ng nauna. */
+    align-items: center; /* Inilalagay sa gitna ang mga link. */
+    list-style-type: none; /* Tinatanggal ang mga bullet point. */
+    margin: 25px 0; /* Naglalagay ng espasyo sa taas at baba. */
     padding: 0; /* Tinatanggal ang default na panloob na espasyo. */
     gap: 15px; /* Naglalagay ng 15px na pagitan sa bawat link. */
 }
 
 /* PORTFOLIO LIST ITEM */
-/* Tinitiyak na maayos ang pagkakalagay ng bawat activity. */
+/* Tinitiyak na nasa sariling linya ang bawat activity. */
 .portfolio li {
-    width: 100%; /* Ginagawang buong lapad ng list container ang bawat item. */
-    margin: 0; /* Tinatanggal ang default na margin. */
-    padding: 0; /* Tinatanggal ang default na padding. */
+    display: block; /* Ginagawang block ang bawat item. */
+    width: 100%; /* Ginagamit ang buong lapad ng magulang na container. */
+    margin: 0; /* Tinatanggal ang default na panlabas na espasyo. */
+    padding: 0; /* Tinatanggal ang default na panloob na espasyo. */
 }
 
 /* PORTFOLIO LINKS */
-/* Ginagawang button ang bawat activity link. */
+/* Itinatakda ang disenyo ng bawat activity link. */
 .portfolio li a {
-    display: block; /* Inilalagay ang bawat link sa sariling linya. */
-    width: 220px; /* Itinatakda ang lapad ng bawat link. */
-    max-width: 80%; /* Tinitiyak na kasya sa maliit na screen. */
+    display: block; /* Ginagawang sariling block ang bawat link. */
+    width: 220px; /* Itinatakda ang lapad ng link sa 220px. */
+    max-width: 80%; /* Tinitiyak na kasya ang link sa maliit na screen. */
     margin: 0 auto; /* Inilalagay sa gitna ang bawat link. */
     padding: 12px 15px; /* Naglalagay ng espasyo sa loob ng link. */
-    background-color: #1B365D; /* Ginagawang navy blue ang background. */
+    background-color: #1B365D; /* Naglalagay ng navy blue na background. */
     color: #FFFFFF; /* Ginagawang puti ang text. */
     text-decoration: none; /* Tinatanggal ang underline. */
-    border-radius: 6px; /* Pinapabilog nang kaunti ang mga sulok. */
-    text-align: center; /* Inilalagay sa gitna ang text. */
-    box-sizing: border-box; /* Isinasama ang padding sa lapad. */
-    transition: background-color 0.3s ease; /* Pinapakinis ang pagbabago ng kulay. */
-}
-
-/* PORTFOLIO LINK HOVER */
-/* Binabago ang kulay kapag itinapat ang mouse sa activity link. */
-.portfolio li a:hover {
-    background-color: #005A9C; /* Ginagawang mas maliwanag na asul ang background. */
-    color: #FFFFFF; /* Pinananatiling puti ang text. */
-}
-
-
-/* GALLERY CONTAINER */
-/* Inaayos ang pagkakalagay ng mga larawan sa Gallery page. */
-.gallery-container {
-    display: flex; /* Ginagamit ang Flexbox para ayusin ang mga larawan. */
-    justify-content: center; /* Inilalagay sa gitna ang mga larawan. */
-    align-items: center; /* Inaayos ang mga larawan sa gitna nang patayo. */
-    flex-wrap: wrap; /* Inililipat sa susunod na linya kapag kulang ang espasyo. */
-    gap: 20px; /* Naglalagay ng pagitan sa bawat larawan. */
-    margin-top: 25px; /* Naglalagay ng espasyo sa itaas ng gallery. */
-}
-
-/* GALLERY IMAGES */
-/* Inaayos ang laki at hitsura ng bawat larawan. */
-.gallery-container img {
-    width: 220px; /* Itinatakda ang lapad ng larawan. */
-    height: 220px; /* Itinatakda ang taas ng larawan. */
-    max-width: 100%; /* Tinitiyak na hindi lalampas sa container. */
-    object-fit: cover; /* Pinupunan ang sukat nang hindi binabago ang proporsyon ng larawan. */
-    border-radius: 10px; /* Pinapabilog ang mga sulok ng larawan. */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Naglalagay ng banayad na anino. */
-}
-
-
-/* CONTACT CONTAINER */
-/* Gumagawa ng puting lalagyan para sa contact information. */
-.contact-container {
-    margin-top: 25px; /* Naglalagay ng espasyo sa itaas. */
-    padding: 20px; /* Naglalagay ng panloob na espasyo. */
-    background-color: #FFFFFF; /* Ginagawang puti ang background. */
-    border-radius: 8px; /* Pinapabilog ang mga sulok. */
-}
-
-/* CONTACT INFORMATION */
-/* Naglalagay ng espasyo sa pagitan ng contact details. */
-.contact-container p {
-    margin: 12px 0; /* Naglalagay ng espasyo sa itaas at ibaba ng bawat talata. */
-}
-
-
-/* RESPONSIVE DESIGN */
-/* Inaayos ang layout para sa mga screen na 600px o mas maliit. */
-@media screen and (max-width: 600px) {
-
-    /* Pinapaliit ang pagitan ng navigation links sa mobile. */
-    .nav-link {
-        padding: 10px; /* Binabawasan ang espasyo sa loob ng link. */
-        font-size: 13px; /* Binabawasan ang laki ng text. */
-    }
-
-    /* Binabawasan ang espasyo ng content sa mobile. */
-    .content,
-    .portfolio {
-        margin: 20px auto; /* Binabawasan ang panlabas na espasyo. */
-        padding: 15px; /* Binabawasan ang panloob na espasyo. */
-    }
-
-    /* Pinapaliit ang heading sa mobile. */
-    .content h1,
-    .portfolio h1 {
-        font-size: 26px; /* Itinatakda ang mas maliit na laki ng heading. */
-    }
-
-    /* Ginagawang kasya sa screen ang mga larawan. */
-    .gallery-container img {
-        width: 100%; /* Ginagawang buong lapad ng available na espasyo ang larawan. */
-        height: auto; /* Pinananatili ang tamang proporsyon ng larawan. */
-    }
-}
