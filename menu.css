@@ -1,228 +1,117 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
 .navbar {
-    background-color: #1B365D; /* Naglalagay ng navy blue na background. */
-    width: 100%; /* Ginagawang buong lapad ng container ang navbar. */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Naglalagay ng banayad na anino sa ilalim. */
+    background-color: #581845;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* NAVIGATION LIST */
-/* Inaayos ang mga menu item sa loob ng navigation bar. */
 .nav-list {
-    display: flex; /* Inilalagay ang mga menu item nang magkakatabi. */
-    flex-direction: row; /* Inaayos ang mga item nang pahalang, mula kaliwa papuntang kanan. */
-    justify-content: flex-start; /* Inilalagay ang mga item sa simula o kaliwang bahagi. */
-    align-items: center; /* Inaayos ang mga item sa gitna nang patayo. */
-    list-style-type: none; /* Tinatanggal ang mga bullet point sa listahan. */
-    margin: 0; /* Tinatanggal ang default na panlabas na espasyo. */
-    padding: 0; /* Tinatanggal ang default na panloob na espasyo. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
-/* NAVIGATION LINK */
-/* Itinatakda ang itsura ng mga link sa menu. */
 .nav-link {
-    display: block; /* Ginagawang clickable ang buong bahagi ng link, kasama ang padding. */
-    padding: 14px 20px; /* Naglalagay ng 14px na espasyo sa taas at baba at 20px sa magkabilang gilid. */
-    color: #FFFFFF; /* Ginagawang puti ang kulay ng text. */
-    text-decoration: none; /* Tinatanggal ang underline ng link. */
-    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
-    font-size: 15px; /* Itinatakda ang laki ng text sa 15 pixels. */
-    font-weight: 600; /* Ginagawang semi-bold ang text. */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Pinapakinis ang pagbabago ng background at text color sa loob ng 0.3 segundo. */
+    display: block;
+    padding: 20px 28px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* 1. UNVISITED LINK STATE */
-/* Ito ang itsura ng link na hindi pa nabisita. */
-.nav-link:link {
-    color: #FFFFFF; /* Ginagawang puti ang text ng hindi pa nabisitang link. */
-}
-
-/* 2. VISITED LINK STATE */
-/* Ito ang itsura ng link na nabisita na dati. */
-.nav-link:visited {
-    color: #E0E0E0; /* Ginagawang light gray ang text ng nabisitang link. */
-}
-
-/* 3. MOUSE HOVER STATE */
-/* Ito ang nangyayari kapag itinapat ang mouse pointer sa link. */
 .nav-link:hover {
-    background-color: #005A9C; /* Binabago ang background sa asul kapag naka-hover. */
-    color: #FFFFFF; /* Ginagawang puti ang text habang naka-hover. */
+    background-color: #a00096;
+    color: white;
 }
 
-/* 4. KEYBOARD FOCUS STATE */
-/* Ipinapakita kung aling link ang naka-focus, halimbawa gamit ang Tab key. */
 .nav-link:focus {
-    outline: 3px solid #FFC107; /* Naglalagay ng dilaw na outline na 3px ang kapal. */
-    outline-offset: -3px; /* Inilalapit ang outline sa loob ng gilid ng link. */
-    background-color: #004080; /* Ginagawang dark blue ang background habang naka-focus. */
+    outline: 3px solid #ffc107;
 }
 
-/* 5. ACTIVE CLICK-PRESS STATE */
-/* Ito ang itsura ng link habang pinipindot ito. */
-.nav-link:active {
-    background-color: #002B55; /* Ginagawang mas madilim ang background habang pinipindot. */
-    transform: translateY(1px); /* Inililipat ang link nang 1px pababa habang pinipindot. */
-}
-
-/* 6. CURRENT PAGE HIGHLIGHT */
-/* Ginagamit ang active class upang ipakita ang kasalukuyang page. */
 .nav-link.active {
-    background-color: #005A9C; /* Nilalagyan ng asul na background ang kasalukuyang page link. */
-    border-bottom: 4px solid #FFC107; /* Naglalagay ng 4px na dilaw na linya sa ibaba ng link. */
+    background-color: #a00096;
+    border-bottom: 5px solid #ff0066;
 }
 
-/* PANGUNAHING NILALAMAN */
-/* Inaayos ang nilalaman ng bawat page. */
+/* Main Content */
 .content {
-    padding: 20px; /* Naglalagay ng espasyo sa paligid ng nilalaman. */
-    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
-    text-align: center; /* Inilalagay sa gitna ang text. */
+    text-align: center;
+    padding: 32px 10px;
 }
 
-/* PORTFOLIO */
-/* Inaayos ang pangunahing bahagi ng portfolio. */
-.portfolio {
-    text-align: center; /* Inilalagay sa gitna ang nilalaman ng portfolio. */
-    margin-top: 40px; /* Naglalagay ng espasyo sa itaas ng portfolio. */
+.content h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 42px;
+    margin-bottom: 32px;
 }
 
-/* PORTFOLIO ACTIVITY LIST */
-/* Inilalagay ang mga activity link nang patayo. */
-.portfolio ul {
-    display: flex !important; /* Gumagamit ng flexbox para ayusin ang mga link. */
-    flex-direction: column !important; /* Inilalagay ang mga link nang patayo, isa sa ilalim ng isa. */
-    justify-content: flex-start !important; /* Nagsisimula sa itaas ang listahan. */
-    align-items: center !important; /* Inilalagay sa gitna ang mga link. */
-    list-style-type: none !important; /* Tinatanggal ang mga bullet point. */
-    gap: 15px !important; /* Naglalagay ng 15px na pagitan sa bawat link. */
-    margin: 25px auto !important; /* Naglalagay ng espasyo sa taas at baba. */
-    padding: 0 !important; /* Tinatanggal ang default na panloob na espasyo. */
+.content h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 32px;
 }
 
-/* PORTFOLIO LIST ITEM */
-/* Tinitiyak na bawat activity ay nasa sariling linya. */
-.portfolio ul > li {
-    display: block !important; /* Ginagawang block ang bawat item. */
-    float: none !important; /* Tinatanggal ang float na maaaring magpaayos nang pahiga. */
-    width: 100% !important; /* Ginagamit ang buong lapad ng listahan. */
-    margin: 0 !important; /* Tinatanggal ang default na panlabas na espasyo. */
-    padding: 0 !important; /* Tinatanggal ang default na panloob na espasyo. */
-    text-align: center !important; /* Inilalagay sa gitna ang link. */
+.content p {
+    font-size: 22px;
+    margin-top: 20px;
 }
 
-/* PORTFOLIO ACTIVITY LINKS */
-/* Itinatakda ang itsura ng bawat activity link. */
-.portfolio ul > li > a {
-    display: block !important; /* Ginagawang sariling linya ang bawat link. */
-    float: none !important; /* Pinipigilang lumutang ang link sa gilid. */
-    width: 220px !important; /* Itinatakda ang lapad ng link sa 220px. */
-    max-width: 90% !important; /* Tinitiyak na kasya sa maliit na screen. */
-    margin: 0 auto !important; /* Inilalagay sa gitna ang bawat link. */
-    padding: 12px 15px !important; /* Naglalagay ng espasyo sa loob ng link. */
-    background-color: #1B365D !important; /* Naglalagay ng navy blue na background. */
-    color: #FFFFFF !important; /* Ginagawang puti ang text. */
-    text-decoration: none !important; /* Tinatanggal ang underline. */
-    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
-    font-size: 15px; /* Itinatakda ang laki ng text. */
-    border-radius: 6px; /* Ginagawang bahagyang bilog ang mga sulok. */
-    text-align: center !important; /* Inilalagay sa gitna ang text. */
-    box-sizing: border-box !important; /* Isinasama ang padding sa kabuuang lapad. */
-    transition: background-color 0.3s ease; /* Pinapakinis ang pagbabago ng background. */
+/* Portfolio Links */
+.project-link {
+    display: block;
+    width: fit-content;
+    min-width: 250px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    background-color: #581845;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-/* PORTFOLIO LINK HOVER */
-/* Binabago ang kulay kapag itinapat ang mouse sa link. */
-.portfolio ul > li > a:hover {
-    background-color: #005A9C !important; /* Ginagawang mas maliwanag na asul ang background. */
-    color: #FFFFFF !important; /* Pinananatiling puti ang text. */
+.project-link:hover {
+    background-color: #a00096;
 }
 
-/* GALLERY */
-/* Inaayos ang mga larawan sa gallery. */
-.gallery-container {
-    display: flex; /* Inilalagay ang mga larawan gamit ang flexbox. */
-    flex-wrap: wrap; /* Inililipat sa susunod na linya ang mga larawang hindi kasya. */
-    justify-content: center; /* Inilalagay sa gitna ang mga larawan. */
-    gap: 20px; /* Naglalagay ng pagitan sa bawat larawan. */
-    padding: 20px; /* Naglalagay ng espasyo sa paligid ng gallery. */
-}
-
-/* GALLERY IMAGES */
-/* Itinatakda ang laki at itsura ng mga larawan. */
-.gallery-container img {
-    width: 250px; /* Itinatakda ang lapad ng larawan. */
-    max-width: 100%; /* Tinitiyak na kasya ang larawan sa maliit na screen. */
-    height: 200px; /* Itinatakda ang taas ng larawan. */
-    object-fit: cover; /* Pinupunan ang sukat nang hindi binabago ang proporsyon. */
-    border-radius: 8px; /* Ginagawang bahagyang bilog ang mga sulok. */
-}
-
-/* CONTACT */
-/* Inaayos ang contact information. */
-.contact-container {
-    max-width: 500px; /* Nililimitahan ang lapad ng contact section. */
-    margin: 30px auto; /* Inilalagay sa gitna ang contact section. */
-    padding: 20px; /* Naglalagay ng espasyo sa loob. */
-    text-align: left; /* Inilalagay sa kaliwa ang text. */
-    font-family: 'Segoe UI', sans-serif; /* Itinatakda ang estilo ng font. */
-}
-
-/* RESPONSIVE DESIGN */
-/* Inaayos ang navigation kapag maliit ang screen. */
+/* Mobile Responsive */
 @media screen and (max-width: 600px) {
-    .nav-list {
-        flex-wrap: wrap; /* Pinapayagang lumipat sa susunod na linya ang menu kapag kulang ang espasyo. */
-    }
-
     .nav-link {
-        padding: 12px; /* Binabawasan ang espasyo sa menu link. */
-        font-size: 14px; /* Binabawasan ang laki ng text. */
+        padding: 16px 10px;
+        font-size: 14px;
     }
 
-    .gallery-container img {
-        width: 100%; /* Ginagawang buong lapad ang larawan sa maliit na screen. */
-        height: auto; /* Awtomatikong inaayos ang taas ng larawan. */
+    .content h1 {
+        font-size: 30px;
     }
-}
 
-/* FINAL FIX: PATAYO ANG PORTFOLIO LINKS */
-/* Pinipigilan ang ibang CSS rule na gawing pahiga ang activity links. */
-body .portfolio ul {
-    display: flex !important; /* Pinananatiling flex ang listahan. */
-    flex-direction: column !important; /* Sapilitang inaayos ang mga link nang patayo. */
-    align-items: center !important; /* Inilalagay sa gitna ang mga link. */
-    list-style: none !important; /* Tinatanggal ang mga bullet point. */
-    gap: 15px !important; /* Naglalagay ng pagitan sa bawat link. */
-    margin: 25px auto !important; /* Inilalagay ang listahan sa gitna. */
-    padding: 0 !important; /* Tinatanggal ang default na padding. */
-}
+    .content h2 {
+        font-size: 24px;
+    }
 
-body .portfolio ul > li {
-    display: block !important; /* Inilalagay ang bawat item sa sariling linya. */
-    float: none !important; /* Tinatanggal ang float. */
-    width: 100% !important; /* Ginagamit ang buong lapad ng listahan. */
-    margin: 0 !important; /* Tinatanggal ang margin ng bawat item. */
-    padding: 0 !important; /* Tinatanggal ang padding ng bawat item. */
-    text-align: center !important; /* Inilalagay sa gitna ang link. */
-}
+    .content p {
+        font-size: 18px;
+    }
 
-body .portfolio ul > li > a {
-    display: block !important; /* Ginagawang block ang bawat link. */
-    float: none !important; /* Tinatanggal ang float ng link. */
-    width: 220px !important; /* Itinatakda ang lapad ng bawat link. */
-    max-width: 90% !important; /* Tinitiyak na kasya ang link sa screen. */
-    margin: 0 auto !important; /* Inilalagay sa gitna ang bawat link. */
-    padding: 12px 15px !important; /* Naglalagay ng espasyo sa loob ng link. */
-    background-color: #1B365D !important; /* Naglalagay ng navy blue na background. */
-    color: #FFFFFF !important; /* Ginagawang puti ang text. */
-    text-decoration: none !important; /* Tinatanggal ang underline. */
-    text-align: center !important; /* Inilalagay sa gitna ang text. */
-    border-radius: 6px !important; /* Ginagawang bilog nang bahagya ang mga sulok. */
-    box-sizing: border-box !important; /* Isinasama ang padding sa kabuuang lapad. */
-}
-
-/* FINAL HOVER */
-/* Binabago ang background kapag itinapat ang mouse sa activity link. */
-body .portfolio ul > li > a:hover {
-    background-color: #005A9C !important; /* Ginagawang asul ang background. */
-    color: #FFFFFF !important; /* Pinananatiling puti ang text. */
+    .project-link {
+        font-size: 15px;
+        min-width: 220px;
+    }
 }
