@@ -1,0 +1,26 @@
+body{
+    background-color:aliceblue
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+.box{
+    background-color:greenyellow;
+    color:white;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.container{
+    display:grid;
+    min-height:400px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+
+}
