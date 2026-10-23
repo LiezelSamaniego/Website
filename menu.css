@@ -1,17 +1,14 @@
-/* Reset */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     background-color: white;
     font-family: Arial, sans-serif;
 }
 
-/* Navigation Bar */
 .navbar {
     background-color: #581845;
     width: 100%;
@@ -50,7 +47,6 @@ body {
     border-bottom: 5px solid #ff0066;
 }
 
-/* Main Content */
 .content {
     text-align: center;
     padding: 32px 10px;
@@ -62,48 +58,63 @@ body {
     margin-bottom: 32px;
 }
 
-.content h2 {
-    font-family: "Times New Roman", serif;
-    font-size: 32px;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px 35px;
+    padding: 0 10px;
 }
 
-.content p {
-    font-size: 22px;
-    margin-top: 20px;
-}
-
-/* Portfolio Links */
 .project-link {
-    display: block;
-    width: fit-content;
-    min-width: 250px;
-    margin: 15px auto;
-    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 10px;
+
+    background-color: #B7E65A;
+    border: 2px solid #8BAF32;
+    border-radius: 8px;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
     font-size: 18px;
+    font-weight: bold;
+
+    box-sizing: border-box;
     transition: 0.3s;
 }
 
-/* Mobile Responsive */
-@media screen and (max-width: 600px) {
-    .nav-link {
-        padding: 16px 10px;
-        font-size: 14px;
+.project-link:hover {
+    background-color: #8FCA35;
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .content h1 {
         font-size: 30px;
     }
 
-    .content h2 {
-        font-size: 24px;
-    }
-
-    .content p {
-        font-size: 18px;
-    }
-
     .project-link {
-        font-size: 15px;
-        min-width: 220px;
+        font-size: 16px;
     }
-}
+
+    .nav-link {
+        padding: 16px 10px;
+        font-size: 14px;
+    }
