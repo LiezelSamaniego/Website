@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Schedule</title>
+    
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 12px 16px; /* Increased padding inside cells */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .table-container {
+            width: 100%;
+            max-width: 800px;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        thead th {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 14px 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        tbody td {
+            padding: 14px 16px;
+            color: #333333;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 15px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:hover {
+            background-color: #edf2f7;
+            transition: background-color 0.2s ease;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <center>
+      
+      <h1>Class Schedule</h1>
+      
+        <table style="width: 75%;">
+            <tr>
+                <th>Day</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr>
+                <th>12:30 PM</th>
+                <th colspan="5">Arrival</th>
+            </tr>
+            <tr>
+                <th>12:30 - 1:20 PM</th>
+                <th style="padding-top: 28px;" rowspan="2" colspan="5">
+                    Computer Programming
+                    <br><br><i>DE VERA</i>
+                </th>
+            </tr>
+            <tr>
+                <th>1:20 - 2:10 PM</th>
+            </tr>
+            <tr>
+                <th>2:10 - 3:00 PM</th>
+                <th>
+                    Pagsulat sa Filipino sa Piling Larang
+                    <br><br><b><i>ODONO</i></b>
+                </th>
+                <th style="padding-top: 28px;" colspan="4">
+                    Entrepreneurship
+                    <br><br><b><i>PAEZ</i></b>
+                </th>
+            </tr>
+            <tr>
+                <th>3:00 - 3:15 PM</th>
+                <th colspan="5">Break</th>
+            </tr>
+            <tr>
+                <th>3:15 - 4:05 PM</th>
+                <th style="padding-top: 28px;">
+                    Homeroom
+                    <br><br><b><i>MANTALA</i></b>
+                </th>
+                <th>
+                    English For Academic and Professional Purposes
+                    <br><br><b><i>MANTALA</i></b>
+                </th>
+                <th style="padding-bottom: 28px;" rowspan="2">
+                    Pagsulat sa Filipino sa Piling Larang
+                    <br><br><b><i>ODONO</i></b>
+                </th>
+                <th style="padding-bottom: 28px;" rowspan="2">
+                    Physical Education and Health 4
+                    <br><br><b><i>DEMEGILLO</i></b>
+                </th>
+                <th>
+                    Entrepreneurship
+                    <br><br><b><i>PAEZ</i></b>
+                </th>
+            </tr>
+            <tr>
+                <th>4:05 - 4:55 PM</th>
+                <th style="padding-top: 28px;" colspan="2" rowspan="2">
+                    English For Academic and Professional Purposes
+                    <br><br><b><i>MANTALA</i></b>
+                </th>
+                <th>
+                    Pagsulat sa Filipino sa Piling Larang
+                    <br><br><b><i>ODONO</i></b>
+                </th>
+            </tr>
+            <tr>
+                <th>4:55 - 5:45 PM</th>
+                <td></td>
+                <th>
+                    Entrepreneurship
+                    <br><br><b><i>PAEZ</i></b>
+                </th>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <th>5:45 PM</th>
+                <th colspan="5">Departure</th>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
