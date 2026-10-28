@@ -1,0 +1,38 @@
+h1{
+    text-align:center;
+    color:goldenrod;
+}
+
+.draggableContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    border:1px solid gold;
+    margin-bottom:150px;
+}
+
+.box{
+display:flex;
+background-color:aqua;
+align-items:center;
+justify-content:center;
+height: 30px;
+width: 120px;
+
+}
+.droppableContainer{
+   border: 1px solid lightblue;
+   display:flex;
+   flex-direction:row;
+   justify-content:space-around;
+}
+
+.droppable{
+    display:flex;
+    background-color:lightgreen;
+    align-items:center;
+    justify-content:center;
+    height:40px;
+    width:150px;
+
+}
