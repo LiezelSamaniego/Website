@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-O Drag and Drop Game</title>
+    <link rel="stylesheet" href="xo.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>X-O Game</h1>
+        <p id="turn">Player X's Turn</p>
+
+       <div class="pieces">
+    <div class="piece" id="X" draggable="true">X</div>
+    <div class="piece" id="O" draggable="true">O</div>
+</div>
+
+<div class="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+</div>
+        <h2 id="result">Score</h2>
+        <p>X Wins: <span id="scoreX">0</span></p>
+        <p>O Wins: <span id="scoreO">0</span></p>
+        <p>Draws: <span id="draws">0</span></p>
+
+        <button onclick="reset()">Reset Game</button>
+    </div>
+
+    <script src="xo.js"></script>
+</body>
+</html>
