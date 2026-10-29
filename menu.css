@@ -1,57 +1,108 @@
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3,  minmax(0, 350px));
-    justify-content: center;
-    gap: 20px 30px;
-    padding: 0 20px;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.project-link {
+/* Body */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #581845;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    list-style: none;
+    flex-wrap: wrap;
+}
 
-    width: 100%;
-    min-height: 120px;
-    padding: 15px;
-
-    background-color: #DDEEFF;
-    border: 2px solid #B4D7F5;
-    border-radius: 8px;
-
-    color: #294563;
+.nav-link {
+    display: block;
+    padding: 20px 28px;
+    color: white;
     text-decoration: none;
-    text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-
-    box-sizing: border-box;
     transition: 0.3s;
 }
 
-.project-link:hover {
-    background-color: #C6E4FF;
-    transform: translateY(-3px);
+.nav-link:hover {
+    background-color: #a00096;
+    color: white;
 }
 
-/* Tablet */
-@media screen and (max-width: 800px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
+.nav-link:focus {
+    outline: 3px solid #ffc107;
+}
+
+.nav-link.active {
+    background-color: #a00096;
+    border-bottom: 5px solid #ff0066;
+}
+
+/* Main Content */
+.content {
+    text-align: center;
+    padding: 32px 10px;
+}
+
+.content h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 42px;
+    margin-bottom: 32px;
+}
+
+.content h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 32px;
+}
+
+.content p {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+/* Portfolio Links */
+.project-link {
+    display: block;
+    width: fit-content;
+    min-width: 250px;
+    margin: 15px auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .nav-link {
+        padding: 16px 10px;
+        font-size: 14px;
     }
-}
 
-/* Mobile */
-@media screen and (max-width: 480px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 18px;
     }
 
     .project-link {
-        min-height: 90px;
-        font-size: 14px;
+        font-size: 15px;
+        min-width: 220px;
     }
-}
