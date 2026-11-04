@@ -1,4 +1,4 @@
-{
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,6 +7,9 @@
 body {
     background-color: white;
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar {
@@ -50,12 +53,14 @@ body {
 .content {
     text-align: center;
     padding: 32px 10px;
+    flex: 1;
 }
 
 .content h1 {
     font-family: "Times New Roman", serif;
     font-size: 42px;
     margin-bottom: 32px;
+    color: #581845;
 }
 
 .portfolio-grid {
@@ -69,22 +74,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     min-height: 50px;
     padding: 12px 10px;
-
     background-color: #B7E65A;
     border: 2px solid #8BAF32;
     border-radius: 8px;
-
     color: white;
     text-decoration: none;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-
-    box-sizing: border-box;
     transition: 0.3s;
 }
 
@@ -93,14 +93,90 @@ body {
     color: white;
 }
 
+.footer {
+    background-color: #F8EFF7;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Stay Connected */
+.footer-info {
+    max-width: 550px;
+}
+
+.footer-info h2,
+.footer-socials h2 {
+    color: #581845;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    color: #581845;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Social Media */
+.footer-socials {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #A00096;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #581845;
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    background-color: #581845;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+}
+
 @media screen and (max-width: 800px) {
+
     .portfolio-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
     }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
+
     .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -118,3 +194,10 @@ body {
         padding: 16px 10px;
         font-size: 14px;
     }
+
+    .footer-info h2,
+    .footer-socials h2 {
+        font-size: 20px;
+    }
+
+}
