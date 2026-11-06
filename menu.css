@@ -66,7 +66,7 @@ body {
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 30px 35px;
+    gap: 20px 25px;
     padding: 0 10px;
 }
 
@@ -74,22 +74,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    min-height: 50px;
-    padding: 12px 10px;
+    width: 85%;
+    min-height: 35px;
+    padding: 8px 6px;
     background-color: #B7E65A;
     border: 2px solid #8BAF32;
     border-radius: 8px;
     color: white;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     transition: 0.3s;
 }
-
 .project-link:hover {
-    background-color: #8FCA35;
+    background-color: lightpink;
     color: white;
 }
 
