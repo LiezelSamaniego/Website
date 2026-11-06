@@ -1,4 +1,4 @@
- {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -64,9 +64,9 @@ body {
 }
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(4, 220px);
+    grid-template-columns: repeat(4, 180px);
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     padding: 0 10px;
 }
 
@@ -74,11 +74,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 55px;
+    width: 150px;
+    height: 50px;
     justify-self: center;
     box-sizing: border-box;
-    padding: 8px;
+    padding: 5px;
     background-color: lightpink;
     border: 2px solid #E69AB0;
     border-radius: 8px;
@@ -94,8 +94,6 @@ body {
     background-color: #E69AB0;
     color: white;
 }
-
-.footer {
     background-color: #F8EFF7;
     width: 100%;
     margin-top: auto;
