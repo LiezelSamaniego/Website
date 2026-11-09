@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("#d1").delay("slow").fadeIn();
+                $("#d2").delay("fast").fadeIn();
+                $("#d3").delay(500).fadeIn();
+                $("#d4").delay(3000).fadeIn();
+            });
+        });
+    </script>
+    <style>
+        div {
+            background-color:rgb(0, 195, 255);
+            height: 200px;
+            width: 200px;
+            margin-top: 10px;
+        }
+
+        #b1 {
+            margin-top: 10px;
+        }
+        button{
+            text-decoration: none; 
+            color: black; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            display: inline-block;
+        }
+    </style>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h1").hover(
+                function () {
+                    $(this).css(
+                        "color",
+                        "Gold"
+                    );
+                },
+                function () {
+                    $(this).css(
+                        "color",
+                        "Gray"
+                    );
+                }
+            );
+            $("#b1").click(function () {
+                $("p").slideUp();
+            });
+            $("#b1").click(function () {
+                $("p").fadeTo(300, 0, function () {
+                    alert("The fade effect finished!");
+                });
+            });
+        });
+    </script>
+
+</head>
+<center>
+
+    <body>
+        <div id="box"></div>
+        <!-- click here and animation will start -->
+        <button id="b1" > Click Here !</button>
+        <!-- jQuery code to show the animate method -->
+        <script>
+
+
+            $(document).ready(function () {
+                $("#b1").click(function () {
+                    $("#box").animate({
+                        height: "300px",
+                        width: "300px"
+                    }, {
+                        duration: 500,
+                        easing: "linear",
+                        complete: function () {
+                            $(this).after(
+                                "<p>Reaches to maximum height and width !</p>");
+                        }
+                    });
+                });
+            });
+        </script>
+        <h1>BLUE</h1>
+        <br><br>
+        <div id="d1" style="width:50px;height:50px;display:
+                none;background-color:rgb(0, 119, 255);"></div>
+        <br>
+        <div id="d2" style="width:50px;height:50px;display:
+                none;background-color:rgb(11, 11, 11);"></div>
+        <br>
+        <div id="d3" style="width:50px;height:50px;display:
+                none;background-color:rgb(80, 80, 79);"></div>
+        <br>
+        <div id="d4" style="width:50px;height:50px;display:
+                none;background-color:rgb(0, 132, 255);"></div>
+        <br>
+
+        <script>
+            $("#b1").click(function () {
+                $("div")
+                    .animate({ left: "+=500px" }, 1000)
+                    .animate({ top: "0px" }, 1000)
+                    .queue(function () {
+                        $(this).toggleClass("green").dequeue();
+                    })
+                    .animate({ left: "50px", top: "150px" }, 400);
+            });
+        </script>
+        <div>
+            <p>BLUE</p>
+
+        </div>
+        <p>I WANT BLUEBERRY!</p>
+    </body>
+</center>
+
+</html>
