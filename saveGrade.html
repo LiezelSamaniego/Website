@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save Grades</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Save Grades</h1>
+
+    <div class="form-container">
+        <label>LRN:</label>
+       
+        <input type="text" id="txtLRN" maxlength="11">
+
+        <label>Name:</label>
+        <input type="text" id="txtName">
+
+        <label>Subject:</label>
+        <input type="text" id="txtSubject">
+
+        <label>Grade:</label>
+        <input type="text" id="txtGrade">
+
+        <button id="btnSave">Save</button>
+    </div>
+
+  
+    <table>
+        <thead>
+            <tr>
+                <th>LRN</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+           
+        </tbody>
+    </table>
+
+    <script>
+      
+        var txtLRN = document.getElementById("txtLRN");
+        var txtName = document.getElementById("txtName");
+        var txtSubject = document.getElementById("txtSubject");
+        var txtGrade = document.getElementById("txtGrade");
+        var btnSave = document.getElementById("btnSave");
+        var tableBody = document.getElementById("tableBody");
+
+       
+        btnSave.onclick = function() {
+            
+           
+            var lrnValue = txtLRN.value;
+            var nameValue = txtName.value;
+            var subjectValue = txtSubject.value;
+            var gradeValue = txtGrade.value;
+
+           
+            if (lrnValue == "" || nameValue == "" || subjectValue == "" || gradeValue == "") {
+                alert("Please fill up all fields!");
+                return; 
+            }
+            
+            if (lrnValue.length < 11) {
+                alert("LRN must be exactly 11 numbers!");
+                return; 
+            }
+
+            
+            var row = tableBody.insertRow();
+
+            
+            row.insertCell(0).textContent = lrnValue;
+            row.insertCell(1).textContent = nameValue;
+            row.insertCell(2).textContent = subjectValue;
+            row.insertCell(3).textContent = gradeValue;
+
+           
+            txtLRN.value = "";
+            txtName.value = "";
+            txtSubject.value = "";
+            txtGrade.value = "";
+        };
+    </script>
+
+</body>
+</html
