@@ -56,5 +56,143 @@
 
     </footer>
 
+    
+    <h1>My Album</h1>
+
+    <div class="carousel" id="carousel">
+
+        <div class="slides">
+
+            <figure class="slide">
+                <img src="futureme.jpg" alt="Pink Rose">
+                <figcaption>Future Me</figcaption>
+            </figure>
+
+            <figure class="slide">
+                <img src="family.jpg" alt="Bulldog">
+                <figcaption>My Family</figcaption>
+            </figure>
+
+            <figure class="slide">
+                <img src="friend.jpg" alt="Halloween Owl">
+                <figcaption>My Friend</figcaption>
+            </figure>
+
+            <figure class="slide">
+                <img src="school.jpg" alt="Dogie">
+                <figcaption>School</figcaption>
+            </figure>
+
+            <button class="nav prev" type="button"
+                aria-label="Previous slide">&#10094;</button>
+
+            <button class="nav next" type="button"
+                aria-label="Next slide">&#10095;</button>
+
+        </div>
+
+        <div class="dots"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+
+    $(document).ready(function () {
+
+        // 1. Cache elements and settings
+        const $carousel = $("#carousel");
+        const $slides = $carousel.find(".slide");
+        const $dotsBox = $carousel.find(".dots");
+
+        const total = $slides.length;
+        const FADE_TIME = 500;
+        const DELAY = 4000;
+
+        let current = 0;
+        let timer = null;
+
+        // 2. Initial state: show only the first slide
+        $slides.hide().eq(0).show();
+
+        // 3. Create one dot per slide
+        $slides.each(function (i) {
+            $("<button>")
+                .attr({
+                    type: "button",
+                    "aria-label": "Go to slide " + (i + 1)
+                })
+                .addClass("dot" + (i === 0 ? " active" : ""))
+                .data("index", i)
+                .appendTo($dotsBox);
+        });
+
+        const $dots = $dotsBox.find(".dot");
+
+        // 4. Show a specific slide
+        function showSlide(index) {
+
+            if (index === current) return;
+
+            $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+
+            $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
+
+            $dots.removeClass("active")
+                .eq(index).addClass("active");
+
+            current = index;
+        }
+
+        // 5. Next and Previous functions
+        function nextSlide() {
+            showSlide((current + 1) % total);
+        }
+
+        function prevSlide() {
+            showSlide((current - 1 + total) % total);
+        }
+
+        // 6. Controls
+        $carousel.on("click", ".next", nextSlide);
+        $carousel.on("click", ".prev", prevSlide);
+
+        $dotsBox.on("click", ".dot", function () {
+            showSlide($(this).data("index"));
+        });
+
+        // 7. Autoplay (pauses on hover)
+        function startAutoplay() {
+            stopAutoplay();
+            timer = setInterval(nextSlide, DELAY);
+        }
+
+        function stopAutoplay() {
+            clearInterval(timer);
+        }
+
+        $carousel.on("mouseenter", stopAutoplay)
+            .on("mouseleave", startAutoplay);
+
+        startAutoplay();
+
+        // 8. Keyboard control
+        $(document).on("keydown", function (event) {
+
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            }
+
+            else if (event.key === "ArrowLeft") {
+                prevSlide();
+            }
+
+        });
+
+    });
+
+    </script>
+
 </body>
 </html>
