@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +8,7 @@
 
     <link rel="stylesheet" href="menu.css">
 </head>
+
 <body>
 
     <!-- NAVIGATION BAR -->
@@ -57,11 +57,13 @@
                     <figcaption>School</figcaption>
                 </figure>
 
-                <button class="nav prev" type="button"
-                    aria-label="Previous slide">&#10094;</button>
+                <button class="nav prev" type="button">
+                    &#10094;
+                </button>
 
-                <button class="nav next" type="button"
-                    aria-label="Next slide">&#10095;</button>
+                <button class="nav next" type="button">
+                    &#10095;
+                </button>
 
             </div>
 
@@ -71,7 +73,7 @@
 
     </section>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer class="footer">
 
         <div class="footer-container">
@@ -90,11 +92,13 @@
                 <h2>My Socials</h2>
 
                 <div class="social-links">
+
                     <a href="https://www.facebook.com/share/189L2ZXxLj/?mibextid=wwXIfr"
                         target="_blank">f</a>
 
                     <a href="https://www.instagram.com/invites/contact/?utm_content=ik0wnke&srtk=ltlyh9d2x9k0"
                         target="_blank">▶</a>
+
                 </div>
             </div>
 
@@ -106,100 +110,100 @@
 
     </footer>
 
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+    <!-- JAVASCRIPT CAROUSEL -->
     <script>
-    $(document).ready(function () {
 
-        const $carousel = $("#carousel");
-        const $slides = $carousel.find(".slide");
-        const $dotsBox = $carousel.find(".dots");
+        const carousel = document.getElementById("carousel");
+        const slides = carousel.querySelectorAll(".slide");
+        const dotsBox = carousel.querySelector(".dots");
 
-        const total = $slides.length;
-        const FADE_TIME = 500;
-        const DELAY = 4000;
+        const nextButton = carousel.querySelector(".next");
+        const prevButton = carousel.querySelector(".prev");
 
         let current = 0;
-        let timer = null;
+        let timer;
 
-        $slides.hide().eq(0).show();
+        const total = slides.length;
 
         // CREATE DOTS
-        $slides.each(function (i) {
-            $("<button>")
-                .attr({
-                    type: "button",
-                    "aria-label": "Go to slide " + (i + 1)
-                })
-                .addClass("dot" + (i === 0 ? " active" : ""))
-                .data("index", i)
-                .appendTo($dotsBox);
+        slides.forEach((slide, index) => {
+
+            const dot = document.createElement("button");
+
+            dot.type = "button";
+            dot.className = "dot";
+
+            dot.addEventListener("click", () => {
+                showSlide(index);
+                restartAutoplay();
+            });
+
+            dotsBox.appendChild(dot);
+
         });
 
-        const $dots = $dotsBox.find(".dot");
+        const dots = dotsBox.querySelectorAll(".dot");
 
         // SHOW SLIDE
         function showSlide(index) {
 
-            if (index === current) return;
+            current = (index + total) % total;
 
-            $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+            slides.forEach((slide, i) => {
+                slide.style.display =
+                    i === current ? "block" : "none";
+            });
 
-            $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === current);
+            });
 
-            $dots.removeClass("active")
-                .eq(index).addClass("active");
-
-            current = index;
         }
 
-        // NEXT AND PREVIOUS
+        // NEXT SLIDE
         function nextSlide() {
-            showSlide((current + 1) % total);
+            showSlide(current + 1);
         }
 
+        // PREVIOUS SLIDE
         function prevSlide() {
-            showSlide((current - 1 + total) % total);
+            showSlide(current - 1);
         }
 
-        // BUTTONS
-        $carousel.on("click", ".next", nextSlide);
-        $carousel.on("click", ".prev", prevSlide);
-
-        $dotsBox.on("click", ".dot", function () {
-            showSlide($(this).data("index"));
+        // BUTTON CONTROLS
+        nextButton.addEventListener("click", () => {
+            nextSlide();
+            restartAutoplay();
         });
 
-        // AUTOPLAY
+        prevButton.addEventListener("click", () => {
+            prevSlide();
+            restartAutoplay();
+        });
+
+        // AUTOMATIC SLIDESHOW
         function startAutoplay() {
-            stopAutoplay();
-            timer = setInterval(nextSlide, DELAY);
+            clearInterval(timer);
+            timer = setInterval(nextSlide, 4000);
         }
 
         function stopAutoplay() {
             clearInterval(timer);
         }
 
-        $carousel.on("mouseenter", stopAutoplay)
-            .on("mouseleave", startAutoplay);
+        function restartAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+        }
 
+        // PAUSE WHEN HOVERING
+        carousel.addEventListener("mouseenter", stopAutoplay);
+        carousel.addEventListener("mouseleave", startAutoplay);
+
+        // FIRST IMAGE
+        showSlide(0);
         startAutoplay();
 
-        // KEYBOARD CONTROL
-        $(document).on("keydown", function (event) {
-
-            if (event.key === "ArrowRight") {
-                nextSlide();
-            }
-
-            else if (event.key === "ArrowLeft") {
-                prevSlide();
-            }
-
-        });
-
-    });
     </script>
 
 </body>
