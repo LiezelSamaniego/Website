@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
 </head>
 <body>
 
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
@@ -20,21 +22,66 @@
         </ul>
     </nav>
 
+    <!-- GALLERY TITLE -->
     <div class="content">
         <h1>Gallery</h1>
         <p>Hello, welcome to my gallery!</p>
     </div>
 
-     <!-- Footer Section -->
+    <!-- MY ALBUM -->
+    <section class="gallery-album">
+
+        <h1 class="album-title">My Album</h1>
+
+        <div class="carousel" id="carousel">
+
+            <div class="slides">
+
+                <figure class="slide">
+                    <img src="futureme.jpg" alt="Future Me">
+                    <figcaption>Future Me</figcaption>
+                </figure>
+
+                <figure class="slide">
+                    <img src="family.jpg" alt="My Family">
+                    <figcaption>My Family</figcaption>
+                </figure>
+
+                <figure class="slide">
+                    <img src="friend.jpg" alt="My Friend">
+                    <figcaption>My Friend</figcaption>
+                </figure>
+
+                <figure class="slide">
+                    <img src="school.jpg" alt="School">
+                    <figcaption>School</figcaption>
+                </figure>
+
+                <button class="nav prev" type="button"
+                    aria-label="Previous slide">&#10094;</button>
+
+                <button class="nav next" type="button"
+                    aria-label="Next slide">&#10095;</button>
+
+            </div>
+
+            <div class="dots"></div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER SECTION -->
     <footer class="footer">
 
         <div class="footer-container">
 
             <div class="footer-info">
                 <h2>Stay Connected!</h2>
+
                 <p>
                     Thank you for visiting my portfolio.
-                    connect and contact with me through my social media accounts.
+                    Connect and contact with me through my social media accounts.
                     Your support and feedback are appreciated!
                 </p>
             </div>
@@ -43,8 +90,11 @@
                 <h2>My Socials</h2>
 
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/189L2ZXxLj/?mibextid=wwXIfr" target="_blank">f</a>
-                    <a href="https://www.instagram.com/invites/contact/?utm_content=ik0wnke&srtk=ltlyh9d2x9k0" target="_blank">▶</a>
+                    <a href="https://www.facebook.com/share/189L2ZXxLj/?mibextid=wwXIfr"
+                        target="_blank">f</a>
+
+                    <a href="https://www.instagram.com/invites/contact/?utm_content=ik0wnke&srtk=ltlyh9d2x9k0"
+                        target="_blank">▶</a>
                 </div>
             </div>
 
@@ -56,52 +106,12 @@
 
     </footer>
 
-    
-    <h1>My Album</h1>
-
-    <div class="carousel" id="carousel">
-
-        <div class="slides">
-
-            <figure class="slide">
-                <img src="futureme.jpg" alt="Pink Rose">
-                <figcaption>Future Me</figcaption>
-            </figure>
-
-            <figure class="slide">
-                <img src="family.jpg" alt="Bulldog">
-                <figcaption>My Family</figcaption>
-            </figure>
-
-            <figure class="slide">
-                <img src="friend.jpg" alt="Halloween Owl">
-                <figcaption>My Friend</figcaption>
-            </figure>
-
-            <figure class="slide">
-                <img src="school.jpg" alt="Dogie">
-                <figcaption>School</figcaption>
-            </figure>
-
-            <button class="nav prev" type="button"
-                aria-label="Previous slide">&#10094;</button>
-
-            <button class="nav next" type="button"
-                aria-label="Next slide">&#10095;</button>
-
-        </div>
-
-        <div class="dots"></div>
-
-    </div>
-
+    <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script>
-
     $(document).ready(function () {
 
-        // 1. Cache elements and settings
         const $carousel = $("#carousel");
         const $slides = $carousel.find(".slide");
         const $dotsBox = $carousel.find(".dots");
@@ -113,10 +123,9 @@
         let current = 0;
         let timer = null;
 
-        // 2. Initial state: show only the first slide
         $slides.hide().eq(0).show();
 
-        // 3. Create one dot per slide
+        // CREATE DOTS
         $slides.each(function (i) {
             $("<button>")
                 .attr({
@@ -130,7 +139,7 @@
 
         const $dots = $dotsBox.find(".dot");
 
-        // 4. Show a specific slide
+        // SHOW SLIDE
         function showSlide(index) {
 
             if (index === current) return;
@@ -145,7 +154,7 @@
             current = index;
         }
 
-        // 5. Next and Previous functions
+        // NEXT AND PREVIOUS
         function nextSlide() {
             showSlide((current + 1) % total);
         }
@@ -154,7 +163,7 @@
             showSlide((current - 1 + total) % total);
         }
 
-        // 6. Controls
+        // BUTTONS
         $carousel.on("click", ".next", nextSlide);
         $carousel.on("click", ".prev", prevSlide);
 
@@ -162,7 +171,7 @@
             showSlide($(this).data("index"));
         });
 
-        // 7. Autoplay (pauses on hover)
+        // AUTOPLAY
         function startAutoplay() {
             stopAutoplay();
             timer = setInterval(nextSlide, DELAY);
@@ -177,7 +186,7 @@
 
         startAutoplay();
 
-        // 8. Keyboard control
+        // KEYBOARD CONTROL
         $(document).on("keydown", function (event) {
 
             if (event.key === "ArrowRight") {
@@ -191,7 +200,6 @@
         });
 
     });
-
     </script>
 
 </body>
