@@ -285,6 +285,7 @@ body {
     }
 }
 
+
 /* CELLPHONE */
 @media screen and (max-width: 480px) {
 
@@ -314,8 +315,9 @@ body {
 
     .slides {
         height: 200px;
+    }
+}
 
-        
 /* CONTACT SECTION */
 .contact-section {
     display: flex;
