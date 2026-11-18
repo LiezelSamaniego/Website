@@ -542,24 +542,5 @@ body {
 
     .about-details h2 {
         font-size: 24px;
-
-        /* GALLERY BACKGROUND */
-body:has(.gallery-album) {
-    background-color: #F7F0F7;
-}
-
-body:has(.gallery-album) .content,
-body:has(.gallery-album) .gallery-album {
-    background-color: transparent;
-
-    body {
-    background-color: #F7F0F7;
-}
-
-.content,
-.gallery-album,
-.portfolio-grid,
-.contact-section {
-    background-color: transparent;
 }
     }
