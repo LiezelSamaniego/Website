@@ -382,6 +382,7 @@ body {
     background-color: #A00096;
 }
 
+
 /* CONTACT RESPONSIVE */
 @media screen and (max-width: 480px) {
     .contact-section {
@@ -390,13 +391,17 @@ body {
 
     .contact-card {
         width: 90%;
-
-        
+    }
+}
 
 /* CONTACT PAGE BACKGROUND */
-
 body.contact-page {
-    background: linear-gradient(to bottom right, #F8DCEB, #E8C5E5, #DCC4EF) !important;
+    background: linear-gradient(
+        135deg,
+        #F8DCEB,
+        #E8C5E5,
+        #DCC4EF
+    ) !important;
     min-height: 100vh;
 }
 
@@ -410,6 +415,4 @@ body.contact-page .contact-section {
 
 body.contact-page .contact-card {
     background-color: #FFF8FC;
-
-    }
 }
