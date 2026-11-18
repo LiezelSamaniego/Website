@@ -390,5 +390,37 @@ body {
 
     .contact-card {
         width: 90%;
-    }
+
+        
+/* CONTACT PAGE BACKGROUND */
+
+body:has(.contact-section) {
+    background: linear-gradient(
+        135deg,
+        #F8EFF7,
+        #FCE4EC,
+        #EBD5E9
+    );
 }
+
+.contact-section {
+    padding: 30px 20px 60px;
+}
+
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 2px solid #E69AB0;
+    box-shadow: 0 6px 15px rgba(88, 24, 69, 0.15);
+    border-radius: 18px;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(88, 24, 69, 0.2);
+}
+
+.content p {
+    color: #581845;
+}
+
+    }
