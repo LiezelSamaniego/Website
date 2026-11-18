@@ -106,6 +106,8 @@ body {
     width: 100%;
     padding: 20px 10px;
     text-align: center;
+    background-color:#DCC9EB;
+    
 }
 
 .album-title {
@@ -369,7 +371,7 @@ body {
 
 .contact-btn {
     display: inline-block;
-    background-color: #581845;
+    background-color: #DCC9EB;
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
@@ -392,27 +394,4 @@ body {
     .contact-card {
         width: 90%;
     }
-}
-
-/* CONTACT PAGE BACKGROUND */
-body.contact-page {
-    background: linear-gradient(
-        135deg,
-        #F8DCEB,
-        #E8C5E5,
-        #DCC4EF
-    ) !important;
-    min-height: 100vh;
-}
-
-body.contact-page .content {
-    background: transparent;
-}
-
-body.contact-page .contact-section {
-    background: transparent;
-}
-
-body.contact-page .contact-card {
-    background-color: #FFF8FC;
 }
