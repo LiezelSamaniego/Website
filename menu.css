@@ -551,6 +551,15 @@ body:has(.gallery-album) {
 body:has(.gallery-album) .content,
 body:has(.gallery-album) .gallery-album {
     background-color: transparent;
+
+    body {
+    background-color: #F7F0F7;
+}
+
+.content,
+.gallery-album,
+.portfolio-grid,
+.contact-section {
+    background-color: transparent;
 }
     }
-
