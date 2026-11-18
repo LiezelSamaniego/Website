@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowman Drawing</title>
+
+    <style>
+        #myDrawing {
+            border: solid 1px green;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas height="500" width="1000" id="myDrawing"></canvas>
+
+<script>
+    const canvas = document.getElementById("myDrawing");
+    const ctx = canvas.getContext("2d");
+
+    // Body
+    ctx.beginPath();
+    ctx.arc(500, 380, 80, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(500, 260, 60, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(500, 150, 45, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.stroke();
+
+    // Eyes
+    ctx.beginPath();
+    ctx.arc(485, 140, 5, 0, Math.PI * 2);
+    ctx.arc(515, 140, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    // Nose
+    ctx.beginPath();
+    ctx.moveTo(500, 150);
+    ctx.lineTo(540, 160);
+    ctx.lineTo(500, 165);
+    ctx.closePath();
+    ctx.fillStyle = "orange";
+    ctx.fill();
+
+    // Buttons
+    ctx.beginPath();
+    ctx.arc(500, 240, 6, 0, Math.PI * 2);
+    ctx.arc(500, 270, 6, 0, Math.PI * 2);
+    ctx.arc(500, 300, 6, 0, Math.PI * 2);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    // Hat
+    ctx.fillStyle = "red";
+    ctx.fillRect(465, 95, 70, 10);
+    ctx.fillRect(480, 45, 40, 50);
+
+    // Arms
+    ctx.beginPath();
+    ctx.moveTo(440, 250);
+    ctx.lineTo(380, 210);
+    ctx.moveTo(560, 250);
+    ctx.lineTo(620, 210);
+    ctx.strokeStyle = "brown";
+    ctx.lineWidth = 5;
+    ctx.stroke();
+
+</script>
+
+</body>
+</html>
