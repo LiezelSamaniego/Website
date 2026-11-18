@@ -314,5 +314,79 @@ body {
 
     .slides {
         height: 200px;
+
+        
+/* CONTACT SECTION */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 20px 20px 50px;
+}
+
+.contact-card {
+    background-color: #F8EFF7;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #E69AB0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card h2 {
+    color: #581845;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    border: 2px solid #E69AB0;
+}
+
+.contact-card h3 {
+    color: #581845;
+    margin: 15px 0;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #581845;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #A00096;
+}
+
+/* CONTACT RESPONSIVE */
+@media screen and (max-width: 480px) {
+    .contact-section {
+        gap: 20px;
+    }
+
+    .contact-card {
+        width: 90%;
     }
 }
