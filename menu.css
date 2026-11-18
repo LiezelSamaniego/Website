@@ -71,6 +71,8 @@ body {
     justify-content: center;
     gap: 15px;
     padding: 0 10px;
+    background-color:#DCC9EB;
+
 }
 
 .project-link {
@@ -98,6 +100,10 @@ body {
 }
 
 /* GALLERY */
+.gallery{
+    background-color:#DCC9EB;
+
+}
 .gallery-album {
     flex: 1;
     display: flex;
@@ -106,7 +112,6 @@ body {
     width: 100%;
     padding: 20px 10px;
     text-align: center;
-    background-color:#DCC9EB;
     
 }
 
