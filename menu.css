@@ -117,11 +117,10 @@ body {
 
 /* CAROUSEL */
 .carousel {
-    width: 350px;
+    width: 500px;
     max-width: 90%;
     margin: 0 auto;
 }
-
 .slides {
     position: relative;
     width: 100%;
