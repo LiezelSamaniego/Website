@@ -71,7 +71,6 @@ body {
     justify-content: center;
     gap: 15px;
     padding: 0 10px;
-    background-color:#DCC9EB;
 
 }
 
@@ -100,10 +99,6 @@ body {
 }
 
 /* GALLERY */
-.gallery{
-    background-color:#DCC9EB;
-
-}
 .gallery-album {
     flex: 1;
     display: flex;
