@@ -39,7 +39,7 @@ body {
 }
 
 .nav-link:hover {
-    background-color: #a00096;
+    background-color: #A00096;
     color: white;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .nav-link.active {
-    background-color: #a00096;
+    background-color: #A00096;
     border-bottom: 5px solid #ff0066;
 }
 
@@ -56,6 +56,7 @@ body {
 .content {
     text-align: center;
     padding: 32px 10px;
+    background-color: #F7F0F7;
 }
 
 .content h1 {
@@ -67,11 +68,14 @@ body {
 
 /* PORTFOLIO GRID */
 .portfolio-grid {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 180px);
     justify-content: center;
+    align-content: start;
     gap: 15px;
-    padding: 0 10px;
+    padding: 20px 10px;
+    background-color: #F7F0F7;
 }
 
 .project-link {
@@ -105,30 +109,33 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px 10px;
+    padding: 25px 10px;
     text-align: center;
+    background-color: #F7F0F7;
 }
 
 .album-title {
     color: #581845;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 34px;
+    margin-bottom: 25px;
 }
 
 /* CAROUSEL */
 .carousel {
-    width: 500px;
+    width: 400px;
     max-width: 90%;
     margin: 0 auto;
 }
+
 .slides {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 225px;
     overflow: hidden;
     background-color: black;
     border-radius: 8px;
 }
+
 /* IMAGES */
 .slide {
     position: absolute;
@@ -312,16 +319,22 @@ body {
     .slides {
         height: 200px;
     }
+
+    .album-title {
+        font-size: 29px;
+    }
 }
 
 /* CONTACT SECTION */
 .contact-section {
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 35px;
     padding: 20px 20px 50px;
+    background-color: #F7F0F7;
 }
 
 .contact-card {
@@ -443,7 +456,6 @@ body {
     line-height: 1.8;
 }
 
-
 /* HOME RESPONSIVE */
 @media screen and (max-width: 480px) {
     .home-header {
@@ -542,5 +554,6 @@ body {
 
     .about-details h2 {
         font-size: 24px;
-}
     }
+}
+
