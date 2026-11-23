@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,6 @@
 
         h1 {
             color: #165b35;
-            font-size: 36px;
         }
 
         canvas {
@@ -25,7 +23,6 @@
             height: auto;
             background: linear-gradient(#dff3f0, #fff5e6);
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -37,17 +34,28 @@
 <canvas id="myCanvas" width="900" height="600"></canvas>
 
 <script>
-
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
-// Function for drawing stars
+// Border
+ctx.strokeStyle = "#165b35";
+ctx.lineWidth = 8;
+ctx.strokeRect(20, 20, 860, 560);
+
+// Title
+ctx.fillStyle = "#165b35";
+ctx.font = "bold 42px Arial";
+ctx.textAlign = "center";
+ctx.fillText("MERRY CHRISTMAS!", 450, 90);
+
+// Stars
 function drawStar(x, y, size, color) {
+    ctx.fillStyle = color;
     ctx.beginPath();
+
     for (let i = 0; i < 10; i++) {
         let angle = -Math.PI / 2 + i * Math.PI / 5;
         let radius = i % 2 === 0 ? size : size / 2;
-
         let px = x + Math.cos(angle) * radius;
         let py = y + Math.sin(angle) * radius;
 
@@ -57,251 +65,131 @@ function drawStar(x, y, size, color) {
             ctx.lineTo(px, py);
         }
     }
+
     ctx.closePath();
-    ctx.fillStyle = color;
     ctx.fill();
 }
 
-// Function for drawing snowflakes
-function drawSnowflake(x, y) {
-    ctx.beginPath();
+drawStar(120, 100, 25, "#ffcc33");
+drawStar(780, 100, 25, "#ffcc33");
+drawStar(250, 140, 15, "red");
+drawStar(650, 140, 15, "red");
 
-    ctx.moveTo(x - 18, y);
-    ctx.lineTo(x + 18, y);
-
-    ctx.moveTo(x, y - 18);
-    ctx.lineTo(x, y + 18);
-
-    ctx.moveTo(x - 13, y - 13);
-    ctx.lineTo(x + 13, y + 13);
-
-    ctx.moveTo(x + 13, y - 13);
-    ctx.lineTo(x - 13, y + 13);
-
-    ctx.strokeStyle = "#3298c9";
-    ctx.lineWidth = 3;
-    ctx.stroke();
-}
-
-// Function for drawing circles
-function drawBall(x, y, color) {
-    ctx.beginPath();
-    ctx.arc(x, y, 13, 0, Math.PI * 2);
-    ctx.fillStyle = color;
-    ctx.fill();
-    ctx.strokeStyle = "#ffffff";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-}
-
-// Card border
-ctx.beginPath();
-ctx.moveTo(20, 20);
-ctx.lineTo(880, 20);
-ctx.lineTo(880, 580);
-ctx.lineTo(20, 580);
-ctx.closePath();
-ctx.strokeStyle = "#165b35";
-ctx.lineWidth = 8;
-ctx.stroke();
-
-// Inner border
-ctx.beginPath();
-ctx.moveTo(35, 35);
-ctx.lineTo(865, 35);
-ctx.lineTo(865, 565);
-ctx.lineTo(35, 565);
-ctx.closePath();
-ctx.strokeStyle = "#d4a017";
-ctx.lineWidth = 3;
-ctx.stroke();
-
-// Christmas title
-ctx.fillStyle = "#165b35";
-ctx.font = "bold 42px Arial";
-ctx.textAlign = "center";
-ctx.fillText("MERRY CHRISTMAS!", 450, 85);
-
-// Decorative stars
-drawStar(120, 90, 25, "#ffcc33");
-drawStar(780, 90, 25, "#ffcc33");
-drawStar(250, 120, 15, "#e63946");
-drawStar(650, 120, 15, "#e63946");
-drawStar(90, 300, 18, "#ffcc33");
-drawStar(810, 300, 18, "#ffcc33");
-
-// Christmas tree - top
-ctx.beginPath();
-ctx.moveTo(450, 155);
-ctx.lineTo(375, 265);
-ctx.lineTo(525, 265);
-ctx.closePath();
+// Christmas Tree
 ctx.fillStyle = "#2ca66f";
+
+ctx.beginPath();
+ctx.moveTo(450, 150);
+ctx.lineTo(350, 300);
+ctx.lineTo(550, 300);
+ctx.closePath();
 ctx.fill();
 
-// Christmas tree - middle
+ctx.fillStyle = "#167a45";
+
 ctx.beginPath();
 ctx.moveTo(450, 220);
-ctx.lineTo(345, 365);
-ctx.lineTo(555, 365);
+ctx.lineTo(320, 390);
+ctx.lineTo(580, 390);
 ctx.closePath();
-ctx.fillStyle = "#167a45";
 ctx.fill();
 
-// Christmas tree - bottom
+ctx.fillStyle = "#07552f";
+
 ctx.beginPath();
 ctx.moveTo(450, 300);
-ctx.lineTo(300, 465);
-ctx.lineTo(600, 465);
+ctx.lineTo(290, 480);
+ctx.lineTo(610, 480);
 ctx.closePath();
-ctx.fillStyle = "#07552f";
 ctx.fill();
 
+// Tree Decorations
+function drawBall(x, y, color) {
+    ctx.beginPath();
+    ctx.arc(x, y, 12, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+}
 
-// Tree decorations
-drawBall(415, 270, "#e63946");
-drawBall(480, 300, "#ffcc33");
-drawBall(385, 350, "#3399ff");
-drawBall(515, 365, "#e63946");
-drawBall(450, 400, "#ffcc33");
-drawBall(350, 435, "#3399ff");
-drawBall(545, 435, "#e63946");
+drawBall(420, 280, "red");
+drawBall(480, 320, "yellow");
+drawBall(380, 370, "blue");
+drawBall(520, 390, "red");
+drawBall(450, 420, "yellow");
+drawBall(350, 440, "blue");
+drawBall(550, 440, "red");
 
-// Snowman body
-ctx.beginPath();
-ctx.arc(720, 455, 65, 0, Math.PI * 2);
+// Tree Star
+drawStar(450, 145, 22, "#ffcc33");
+
+// Snowman
 ctx.fillStyle = "white";
-ctx.fill();
-ctx.strokeStyle = "#333333";
+ctx.strokeStyle = "#333";
 ctx.lineWidth = 3;
+
+ctx.beginPath();
+ctx.arc(720, 460, 65, 0, Math.PI * 2);
+ctx.fill();
 ctx.stroke();
 
-// Snowman head
 ctx.beginPath();
 ctx.arc(720, 355, 43, 0, Math.PI * 2);
-ctx.fillStyle = "white";
 ctx.fill();
-ctx.strokeStyle = "#333333";
 ctx.stroke();
 
-// Snowman hat
-ctx.beginPath();
-ctx.moveTo(680, 315);
-ctx.lineTo(760, 315);
-ctx.lineTo(750, 305);
-ctx.lineTo(745, 265);
-ctx.lineTo(695, 265);
-ctx.lineTo(690, 305);
-ctx.closePath();
+// Hat
 ctx.fillStyle = "#165b35";
-ctx.fill();
+ctx.fillRect(690, 280, 60, 40);
+ctx.fillRect(680, 315, 80, 10);
 
-// Hat ribbon
-ctx.beginPath();
-ctx.moveTo(691, 300);
-ctx.lineTo(749, 300);
-ctx.strokeStyle = "#e63946";
-ctx.lineWidth = 8;
-ctx.stroke();
-
-// Snowman eyes
+// Eyes
+ctx.fillStyle = "black";
 ctx.beginPath();
 ctx.arc(706, 350, 5, 0, Math.PI * 2);
 ctx.arc(734, 350, 5, 0, Math.PI * 2);
-ctx.fillStyle = "black";
 ctx.fill();
 
-// Snowman nose
-ctx.beginPath();
-ctx.moveTo(720, 358);
-ctx.lineTo(748, 365);
-ctx.lineTo(720, 370);
-ctx.closePath();
+// Nose
 ctx.fillStyle = "orange";
+ctx.beginPath();
+ctx.moveTo(720, 360);
+ctx.lineTo(750, 370);
+ctx.lineTo(720, 375);
 ctx.fill();
 
-// Snowman smile
+// Mouth
 ctx.beginPath();
-ctx.arc(720, 363, 18, 0.3, 1.3);
-ctx.strokeStyle = "#333333";
-ctx.lineWidth = 2;
+ctx.arc(720, 370, 15, 0.3, 1.3);
 ctx.stroke();
 
-// Snowman buttons
-ctx.beginPath();
-ctx.arc(720, 430, 5, 0, Math.PI * 2);
-ctx.arc(720, 455, 5, 0, Math.PI * 2);
-ctx.arc(720, 480, 5, 0, Math.PI * 2);
-ctx.fillStyle = "#333333";
-ctx.fill();
+// Buttons
+ctx.fillStyle = "black";
+for (let y = 430; y <= 480; y += 25) {
+    ctx.beginPath();
+    ctx.arc(720, y, 5, 0, Math.PI * 2);
+    ctx.fill();
+}
 
-// Snowman arms
-ctx.beginPath();
-ctx.moveTo(660, 420);
-ctx.lineTo(625, 390);
-ctx.moveTo(780, 420);
-ctx.lineTo(815, 390);
-ctx.strokeStyle = "#8b4513";
-ctx.lineWidth = 5;
-ctx.stroke();
-
-// Gift box 1
-ctx.beginPath();
-ctx.moveTo(90, 430);
-ctx.lineTo(220, 430);
-ctx.lineTo(220, 530);
-ctx.lineTo(90, 530);
-ctx.closePath();
+// Gift Box
 ctx.fillStyle = "#cc2222";
-ctx.fill();
-ctx.strokeStyle = "#8b0000";
-ctx.lineWidth = 3;
-ctx.stroke();
+ctx.fillRect(90, 440, 130, 90);
 
-// Gift ribbon 1
-ctx.beginPath();
-ctx.moveTo(155, 430);
-ctx.lineTo(155, 530);
-ctx.moveTo(90, 480);
-ctx.lineTo(220, 480);
-ctx.strokeStyle = "#ffcc33";
-ctx.lineWidth = 9;
-ctx.stroke();
-
-// Gift bow 1
-ctx.beginPath();
-ctx.moveTo(155, 430);
-ctx.lineTo(125, 400);
-ctx.lineTo(110, 420);
-ctx.lineTo(155, 440);
-ctx.closePath();
-ctx.moveTo(155, 430);
-ctx.lineTo(185, 400);
-ctx.lineTo(200, 420);
-ctx.lineTo(155, 440);
-ctx.closePath();
 ctx.fillStyle = "#ffcc33";
+ctx.fillRect(145, 440, 15, 90);
+ctx.fillRect(90, 475, 130, 10);
+
+// Gift Bow
+ctx.beginPath();
+ctx.arc(145, 430, 15, 0, Math.PI * 2);
 ctx.fill();
 
-// Gift box 2
-ctx.beginPath();
-ctx.moveTo(755, 490);
-ctx.lineTo(820, 490);
-ctx.lineTo(820, 545);
-ctx.lineTo(755, 545);
-ctx.closePath();
+// Second Gift
 ctx.fillStyle = "#3399cc";
-ctx.fill();
+ctx.fillRect(755, 490, 65, 55);
 
-// Gift ribbon 2
-ctx.beginPath();
-ctx.moveTo(787, 490);
-ctx.lineTo(787, 545);
-ctx.moveTo(755, 515);
-ctx.lineTo(820, 515);
-ctx.strokeStyle = "#ffcc33";
-ctx.lineWidth = 5;
-ctx.stroke();
+ctx.fillStyle = "#ffcc33";
+ctx.fillRect(780, 490, 10, 55);
+ctx.fillRect(755, 515, 65, 7);
 
 </script>
 
