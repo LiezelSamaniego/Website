@@ -623,6 +623,100 @@ body {
     .about-profile {
         width: 100%;
         max-width: 380px;
+
+    
+/* HOME PAGE WELCOME BOX */
+
+.home-header {
+    background-color: #F7F0F7;
+    text-align: center;
+    padding: 15px 15px 20px;
+    color: #581845;
+}
+
+.home-header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.home-header h2 {
+    font-size: 22px;
+}
+
+.home-content {
+    background-color: #F7F0F7;
+    padding: 10px 15px 40px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.welcome-card {
+    background-color: #581845;
+    width: 795px;
+    max-width: 100%;
+    padding: 30px;
+    border: 2px solid #E69AB0;
+    border-radius: 12px;
+    color: #F8D9EC;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(88, 24, 69, 0.15);
+}
+
+.welcome-card h2 {
+    color: #F8D9EC;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: #F8D9EC;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.welcome-card .about-site {
+    background: none;
+    padding: 0;
+    margin-top: 20px;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.welcome-card .about-site h3 {
+    color: #E69AB0;
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #E69AB0;
+    padding-bottom: 10px;
+}
+
+.welcome-card .about-site p {
+    color: #F8D9EC;
+    text-align: center;
+}
+
+/* HOME RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+
+    .home-header h1 {
+        font-size: 26px;
+    }
+
+    .home-header h2 {
+        font-size: 20px;
+    }
+
+    .welcome-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .welcome-card h2 {
+        font-size: 21px;
     }
 
 }
