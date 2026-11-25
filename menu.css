@@ -621,10 +621,10 @@ body {
     }
 
     .about-profile {
-        width: 100%;
-        max-width: 380px;
-
-    
+    width: 100%;
+    max-width: 380px;
+    }
+}    
 /* HOME PAGE WELCOME BOX */
 
 .home-header {
