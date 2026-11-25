@@ -604,6 +604,7 @@ body {
 
 }
 
+
 /* ABOUT PAGE MOBILE */
 @media screen and (max-width: 600px) {
 
@@ -621,16 +622,19 @@ body {
     }
 
     .about-profile {
-    width: 100%;
-    max-width: 380px;
+        width: 100%;
+        max-width: 380px;
     }
-}    
-/* HOME PAGE WELCOME BOX */
+
+}
+
+
+/* HOME PAGE */
 
 .home-header {
-    background-color: #F7F0F7;
+    background: linear-gradient(to right, #EADCF4, #F7EAF5, #DCC9EB);
     text-align: center;
-    padding: 15px 15px 20px;
+    padding: 25px 15px;
     color: #581845;
 }
 
@@ -641,11 +645,12 @@ body {
 
 .home-header h2 {
     font-size: 22px;
+    margin-bottom: 0;
 }
 
 .home-content {
     background-color: #F7F0F7;
-    padding: 10px 15px 40px;
+    padding: 25px 20px 40px;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -698,6 +703,7 @@ body {
     text-align: center;
 }
 
+
 /* HOME RESPONSIVE */
 
 @media screen and (max-width: 600px) {
@@ -710,6 +716,10 @@ body {
         font-size: 20px;
     }
 
+    .home-content {
+        padding: 20px 15px 30px;
+    }
+
     .welcome-card {
         width: 100%;
         padding: 20px;
@@ -720,3 +730,4 @@ body {
     }
 
 }
+
