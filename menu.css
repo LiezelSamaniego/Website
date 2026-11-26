@@ -748,4 +748,16 @@ body {
         width: 100%;
         max-width: 380px;
     }
+
+    /* FONT AWESOME CONTACT ICONS */
+.contact-card h2 i {
+    color: #A00096;
+    margin-right: 8px;
+    font-size: 25px;
+}
+
+.contact-btn i {
+    margin-right: 8px;
+    font-size: 16px;
+  }
 }
