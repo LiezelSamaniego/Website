@@ -119,6 +119,7 @@ body {
     font-size: 34px;
     margin-bottom: 25px;
 }
+
 /* CAROUSEL */
 .carousel {
     width: 650px;
@@ -309,15 +310,15 @@ body {
     .footer-socials h2 {
         font-size: 20px;
     }
-    
-.carousel {
-    width: 650px;
-    max-width: 95%;
-}
 
-.slides {
-    height: 280px;
-}
+    .carousel {
+        width: 650px;
+        max-width: 95%;
+    }
+
+    .slides {
+        height: 280px;
+    }
 
     .album-title {
         font-size: 29px;
@@ -401,68 +402,118 @@ body {
     }
 }
 
-/* HOME PAGE */
+/* HOME HEADER */
 .home-header {
     background: linear-gradient(to right, #EADCF4, #F7EAF5, #DCC9EB);
     text-align: center;
-    padding: 65px 20px;
+    padding: 25px 15px;
     color: #581845;
 }
 
 .home-header h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 5px;
 }
 
 .home-header h2 {
-    font-size: 24px;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin-bottom: 0;
 }
 
-.home-header p {
-    display: inline-block;
-    background-color: #F8D9EC;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
+/* HOME CONTENT */
 .home-content {
     background-color: #F7F0F7;
-    padding: 40px 10%;
+    padding: 25px 20px 40px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
 }
 
-.about-site {
-    background-color: white;
+/* WELCOME BOX */
+.welcome-card {
+    background-color: #581845;
+    width: 795px;
+    max-width: 100%;
     padding: 30px;
+    border: 2px solid #E69AB0;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(88, 24, 69, 0.10);
+    color: #F8D9EC;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(88, 24, 69, 0.15);
 }
 
-.about-site h2 {
-    color: #581845;
-    font-size: 28px;
-    margin-bottom: 20px;
+.welcome-card h2 {
+    color: #F8D9EC;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: #F8D9EC;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.welcome-card .about-site {
+    background: none;
+    padding: 0;
+    margin-top: 20px;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: left;
+}
+
+.welcome-card .about-site h3 {
+    color: #E69AB0;
+    font-size: 18px;
+    margin-bottom: 12px;
     border-bottom: 2px solid #E69AB0;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
 }
 
-.about-site p {
-    color: #444;
-    font-size: 16px;
+.welcome-card .about-site p {
+    color: #F8D9EC;
+    text-align: center;
+}
+
+/* WEBSITE SUMMARY BOX */
+.summary-card {
+    background-color: #581845;
+    width: 795px;
+    max-width: 100%;
+    padding: 30px;
+    border: 2px solid #E69AB0;
+    border-radius: 12px;
+    color: #F8D9EC;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(88, 24, 69, 0.15);
+}
+
+.summary-card h2 {
+    color: #F8D9EC;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.summary-card p {
+    color: #F8D9EC;
+    font-size: 15px;
     line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.summary-card p:last-child {
+    margin-bottom: 0;
 }
 
 /* HOME RESPONSIVE */
-@media screen and (max-width: 480px) {
-    .home-header {
-        padding: 45px 15px;
-    }
+@media screen and (max-width: 600px) {
 
     .home-header h1 {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .home-header h2 {
@@ -470,18 +521,24 @@ body {
     }
 
     .home-content {
-        padding: 25px 15px;
+        padding: 20px 15px 30px;
     }
 
-    .about-site {
+    .welcome-card,
+    .summary-card {
+        width: 100%;
         padding: 20px;
     }
 
-    .about-site h2 {
-        font-size: 23px;
+    .welcome-card h2,
+    .summary-card h2 {
+        font-size: 21px;
+    }
+
+    .summary-card p {
+        font-size: 14px;
     }
 }
-
 
 /* ABOUT PAGE */
 .about-main {
@@ -600,9 +657,7 @@ body {
         width: 300px;
         padding: 20px;
     }
-
 }
-
 
 /* ABOUT PAGE MOBILE */
 @media screen and (max-width: 600px) {
@@ -624,109 +679,4 @@ body {
         width: 100%;
         max-width: 380px;
     }
-
 }
-
-
-/* HOME PAGE */
-
-.home-header {
-    background: linear-gradient(to right, #EADCF4, #F7EAF5, #DCC9EB);
-    text-align: center;
-    padding: 25px 15px;
-    color: #581845;
-}
-
-.home-header h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-}
-
-.home-header h2 {
-    font-size: 22px;
-    margin-bottom: 0;
-}
-
-.home-content {
-    background-color: #F7F0F7;
-    padding: 25px 20px 40px;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.welcome-card {
-    background-color: #581845;
-    width: 795px;
-    max-width: 100%;
-    padding: 30px;
-    border: 2px solid #E69AB0;
-    border-radius: 12px;
-    color: #F8D9EC;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(88, 24, 69, 0.15);
-}
-
-.welcome-card h2 {
-    color: #F8D9EC;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.welcome-card p {
-    color: #F8D9EC;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.welcome-card .about-site {
-    background: none;
-    padding: 0;
-    margin-top: 20px;
-    box-shadow: none;
-    border-radius: 0;
-    text-align: left;
-}
-
-.welcome-card .about-site h3 {
-    color: #E69AB0;
-    font-size: 18px;
-    margin-bottom: 12px;
-    border-bottom: 2px solid #E69AB0;
-    padding-bottom: 10px;
-}
-
-.welcome-card .about-site p {
-    color: #F8D9EC;
-    text-align: center;
-}
-
-
-/* HOME RESPONSIVE */
-
-@media screen and (max-width: 600px) {
-
-    .home-header h1 {
-        font-size: 26px;
-    }
-
-    .home-header h2 {
-        font-size: 20px;
-    }
-
-    .home-content {
-        padding: 20px 15px 30px;
-    }
-
-    .welcome-card {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .welcome-card h2 {
-        font-size: 21px;
-    }
-
-}
-
