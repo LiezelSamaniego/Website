@@ -219,8 +219,9 @@ body {
 
 /* GALLERY DESCRIPTION */
 .gallery-description {
-    width: 650px;
-    max-width: 95%;
+    width: 85%;
+    max-width: 600px;
+    min-height: 180px;
     background-color: #581845;
     color: #F8D9EC;
     padding: 25px;
@@ -236,6 +237,7 @@ body {
     margin-bottom: 15px;
     border-bottom: 2px solid #E69AB0;
     padding-bottom: 12px;
+    text-align: center;
 }
 
 .gallery-description p {
@@ -244,7 +246,6 @@ body {
     line-height: 1.8;
     text-align: justify;
 }
-
 
 /* GALLERY RESPONSIVE */
 @media screen and (max-width: 800px) {
@@ -269,6 +270,7 @@ body {
 @media screen and (max-width: 480px) {
     .gallery-description {
         width: 95%;
+        min-height: 150px;
         padding: 20px;
     }
 
