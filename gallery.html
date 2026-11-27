@@ -120,135 +120,118 @@
     <!-- JAVASCRIPT CAROUSEL -->
     <script>
 
-        const carousel = document.getElementById("carousel");
-        const slides = carousel.querySelectorAll(".slide");
-        const dotsBox = carousel.querySelector(".dots");
+       
+const carousel = document.getElementById("carousel");
+const slides = carousel.querySelectorAll(".slide");
+const dotsBox = carousel.querySelector(".dots");
 
-        const nextButton = carousel.querySelector(".next");
-        const prevButton = carousel.querySelector(".prev");
+const nextButton = carousel.querySelector(".next");
+const prevButton = carousel.querySelector(".prev");
 
-        const descriptionTitle =
-            document.getElementById("description-title");
+const descriptionTitle = document.getElementById("description-title");
+const descriptionText = document.getElementById("description-text");
 
-        const descriptionText =
-            document.getElementById("description-text");
+let current = 0;
+let timer;
 
-        let current = 0;
-        let timer;
+const total = slides.length;
 
-        const total = slides.length;
+// DESCRIPTIONS
+const descriptions = [
+    {
+        title: "Future Me",
+        text: `This picture represents my dreams and goals for the future. It reminds me to keep working hard, improve my skills, and believe in myself.`
+    },
+    {
+        title: "My Family",
+        text: `My family is an important part of my life. They give me love, support, and inspiration as I continue reaching my dreams.`
+    },
+    {
+        title: "My Friend",
+        text: `Friends make life more meaningful and memorable. This picture reminds me of the happy moments and experiences we share together.`
+    },
+    {
+        title: "School",
+        text: `School is where I gain knowledge, develop my skills, and learn new things. It is also a place where I create memories and prepare for my future.`
+    }
+];
 
-        // DESCRIPTIONS
-        const descriptions = [
-            {
-                title: "Future Me",
-                text: "This picture represents my dreams and goals for the future. 
-                    It reminds me to keep working hard, improve my skills, and 
-                    believe in myself."
-            },
-            {
-                title: "My Family",
-                text: "My family is an important part of my life. They give me love,
-                    support, and inspiration as I continue reaching my dreams."
-            },
-            {
-                title: "My Friend",
-                text: "Friends make life more meaningful and memorable.
-                    This picture reminds me of the happy moments and 
-                    experiences we share together."
-            },
-            {
-                title: "School",
-                text: "School is where I gain knowledge, develop my skills,
-                    and learn new things. It is also a place where I create
-                    memories and prepare for my future."
-            }
-        ];
+// CREATE DOTS
+slides.forEach((slide, index) => {
+    const dot = document.createElement("button");
 
-        // CREATE DOTS
-        slides.forEach((slide, index) => {
+    dot.type = "button";
+    dot.className = "dot";
 
-            const dot = document.createElement("button");
+    dot.addEventListener("click", () => {
+        showSlide(index);
+        restartAutoplay();
+    });
 
-            dot.type = "button";
-            dot.className = "dot";
+    dotsBox.appendChild(dot);
+});
 
-            dot.addEventListener("click", () => {
-                showSlide(index);
-                restartAutoplay();
-            });
+const dots = dotsBox.querySelectorAll(".dot");
 
-            dotsBox.appendChild(dot);
+// SHOW SLIDE
+function showSlide(index) {
+    current = (index + total) % total;
 
-        });
+    slides.forEach((slide, i) => {
+        slide.style.display = i === current ? "block" : "none";
+    });
 
-        const dots = dotsBox.querySelectorAll(".dot");
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+    });
 
-        // SHOW SLIDE
-        function showSlide(index) {
+    descriptionTitle.textContent = descriptions[current].title;
+    descriptionText.textContent = descriptions[current].text;
+}
 
-            current = (index + total) % total;
+// NEXT SLIDE
+function nextSlide() {
+    showSlide(current + 1);
+}
 
-            slides.forEach((slide, i) => {
-                slide.style.display =
-                    i === current ? "block" : "none";
-            });
+// PREVIOUS SLIDE
+function prevSlide() {
+    showSlide(current - 1);
+}
 
-            dots.forEach((dot, i) => {
-                dot.classList.toggle("active", i === current);
-            });
+// BUTTON CONTROLS
+nextButton.addEventListener("click", () => {
+    nextSlide();
+    restartAutoplay();
+});
 
-            descriptionTitle.textContent =
-                descriptions[current].title;
+prevButton.addEventListener("click", () => {
+    prevSlide();
+    restartAutoplay();
+});
 
-            descriptionText.textContent =
-                descriptions[current].text;
+// AUTOMATIC SLIDESHOW
+function startAutoplay() {
+    clearInterval(timer);
+    timer = setInterval(nextSlide, 4000);
+}
 
-        }
+function stopAutoplay() {
+    clearInterval(timer);
+}
 
-        // NEXT SLIDE
-        function nextSlide() {
-            showSlide(current + 1);
-        }
+function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+}
 
-        // PREVIOUS SLIDE
-        function prevSlide() {
-            showSlide(current - 1);
-        }
+// PAUSE WHEN HOVERING
+carousel.addEventListener("mouseenter", stopAutoplay);
+carousel.addEventListener("mouseleave", startAutoplay);
 
-        // BUTTON CONTROLS
-        nextButton.addEventListener("click", () => {
-            nextSlide();
-            restartAutoplay();
-        });
-
-        prevButton.addEventListener("click", () => {
-            prevSlide();
-            restartAutoplay();
-        });
-
-        // AUTOMATIC SLIDESHOW
-        function startAutoplay() {
-            clearInterval(timer);
-            timer = setInterval(nextSlide, 4000);
-        }
-
-        function stopAutoplay() {
-            clearInterval(timer);
-        }
-
-        function restartAutoplay() {
-            stopAutoplay();
-            startAutoplay();
-        }
-
-        // PAUSE WHEN HOVERING
-        carousel.addEventListener("mouseenter", stopAutoplay);
-        carousel.addEventListener("mouseleave", startAutoplay);
-
-        // FIRST IMAGE
-        showSlide(0);
-        startAutoplay();
+// FIRST IMAGE
+showSlide(0);
+startAutoplay();
 
     </script>
 
