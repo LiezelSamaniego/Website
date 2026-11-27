@@ -501,6 +501,143 @@ body {
     gap: 20px;
 }
 
+/* HERO CALL-TO-ACTION BUTTONS */
+.hero-buttons {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #E69AB0;
+    color: #581845;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #ff0066;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: #F8D9EC;
+    border: 2px solid #E69AB0;
+}
+
+.cta-btn.secondary:hover {
+    background-color: #A00096;
+    color: white;
+}
+
+/* SKILLS CARD */
+.skills-card {
+    background-color: white;
+    width: 795px;
+    max-width: 100%;
+    padding: 25px 30px;
+    border: 2px solid #E69AB0;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(88, 24, 69, 0.08);
+}
+
+.skills-card h2 {
+    color: #581845;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background-color: #EADCF4;
+    color: #581845;
+    border: 1px solid #581845;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* EXPLORE GRID (REPLACES WEBSITE SUMMARY) */
+.explore-section {
+    width: 795px;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.explore-section h2 {
+    color: #581845;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.explore-item {
+    background-color: #581845;
+    color: #F8D9EC;
+    padding: 22px;
+    border: 2px solid #E69AB0;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: left;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(88, 24, 69, 0.12);
+}
+
+.explore-item:hover {
+    background-color: #A00096;
+    transform: translateY(-4px);
+}
+
+.explore-item h3 {
+    color: #E69AB0;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.explore-item:hover h3 {
+    color: white;
+}
+
+.explore-item p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE GRID FOR MOBILE */
+@media screen and (max-width: 600px) {
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* WELCOME BOX */
 .welcome-card {
     background-color: #581845;
